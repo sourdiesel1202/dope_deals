@@ -67,6 +67,7 @@ class THCObject:
 
 
 class Special(THCObject):
+    raw = ""
     type="Special"
     thc="n/a"
     producer = ""
@@ -112,7 +113,7 @@ class Strain(THCObject):
         quantity = self.quantity.replace('-','').strip()
         #convert to grams
         if 'oz' in self.quantity:
-            quantity=quantity.split('o')[0].strip()
+            quantity=quantity.lower().split('o')[0].strip()
             if quantity =='1/8':
                 quantity=3.5
             elif quantity=='1/4':
@@ -124,7 +125,10 @@ class Strain(THCObject):
             else:
                 raise Exception(f"cannot calculate ounce price for {str(self)}")
         else:
-            quantity = float(quantity.replace('g', '').strip())
+            try:
+                quantity = float(quantity.replace('g', '').strip())
+            except:
+                pass
         try:
             cost = self.cost()
         except:
@@ -173,6 +177,7 @@ def generate_flower_report(deal_dict):
         try:
             deal_list = [x for x in deals if x.calculate_oz_cost() <= module_config['cost_limit'] and x.thc_content() >=module_config['thc_limit'] and not is_strain_ignore_type(x) ]
         except:
+            traceback.print_exc()
             print(f"Could not generate deals for {dispo}")
             continue
         full_inventory = full_inventory+deal_list
@@ -212,7 +217,11 @@ def process_special_deals(deals,dispensary):
 
     return _specials
 
+def process_vaporizer_deals(deals,dispensary):
+    vapes = []
+    for deal in deals:
 
+        pass
 def process_flower_deals(deals, dispensary):
     strains = []
     for deal in deals:
@@ -221,9 +230,10 @@ def process_flower_deals(deals, dispensary):
         # print(deal)
 
         data = deal.split(module_config['delimiter'])
-        while data[0] in ['Staff Pick','Special offer',] or '$' in data[0]:
-            del data[0]
         strain = Strain()
+        strain.raw =data
+        while data[0] in ['Staff Pick','Special offer'] or '$' in data[0]:
+            del data[0]
         strain.dispensary=dispensary
         strain.producer = data[0]
         strain.name=data[1]
@@ -241,11 +251,15 @@ def process_flower_deals(deals, dispensary):
                 strain.thc = data[3].strip().split("THC: ")[-1]
         except:
             pass
-        strain.quantity = data[4]
+        # if '%'data[-1]:
+
         if '%' in data[-1]:
             strain.price=data[-2]
+            strain.quantity = data[-3] if '$' not in data[-3] else data[-4]
+
         else:
             strain.price=data[-1]
+            strain.quantity = data[-2]
         # print(deal)
         # print(strain)
         strains.append(strain)
@@ -308,7 +322,7 @@ def find_deals(driver,dispensary, type=DealType.FLOWER):
     if type==DealType.CONCENTRATES:
         pass
     if type==DealType.VAPORIZERS:
-        pass
+        return process_flower_deals(deals,dispensary)
     if type==DealType.EDIBLES:
         pass
 
@@ -328,29 +342,30 @@ if __name__ == "__main__":
         driver.get("https://dutchie.com/")
         age_restriction_btn = driver.find_element(By.CSS_SELECTOR,'button[data-test="age-restriction-yes"]')
         age_restriction_btn.click()
-        search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
-        search_bar.send_keys(module_config['location'])
-
-        # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
-        search_bar.click()
-        time.sleep(2)
-        location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
-        location.click()
-        time.sleep(3)
-        soup = BeautifulSoup(driver.page_source)
-        # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
-        # results = soup.find("a", data-testid='listbox--1')
-        dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
-        dispensaries = {}
-        for link in dispensary_links:
-            dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
-            # dis = [x.get_attribute('href') for x in dispensaries]
-        print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
-        dispo_str = '\n'.join(dispensaries.keys())
-        print(f"{dispo_str}\n")
+        # search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
+        # search_bar.send_keys(module_config['location'])
+        #
+        # # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
+        # search_bar.click()
+        # time.sleep(2)
+        # location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
+        # location.click()
+        # time.sleep(3)
+        # soup = BeautifulSoup(driver.page_source)
+        # # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
+        # # results = soup.find("a", data-testid='listbox--1')
+        # dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
+        # dispensaries = {}
+        # for link in dispensary_links:
+        #     dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
+        #     # dis = [x.get_attribute('href') for x in dispensaries]
+        # print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
+        # dispo_str = '\n'.join(dispensaries.keys())
+        # print(f"{dispo_str}\n")
         # dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
         # dispensaries={'Gage':{"url":'https://dutchie.com/dispensary/gage-cannabis-co-adrian'}}
         # dispensaries={'amazing-budz':{"url":'https://dutchie.com/dispensary/amazing-budz'}}
+        dispensaries={'heads-monroe':{"url":'https://dutchie.com/dispensary/heads-monroe'}}
         # for k, v in dispensaries.items():
         dispos = [x for x in dispensaries.keys()]
 

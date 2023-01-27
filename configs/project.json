@@ -1,0 +1,11 @@
+{
+  "import_directory": "import",
+  "credential_file": "./credentials.json",
+  "cmdb_lookup_full_endpoint": "/digital/servicenowqa/v1/cmdb_ci/full",
+  "cmdb_lookup_name_endpoint": "/digital/servicenowqa/v1/cmdb_ci/name",
+  "incident_endpoint": "/digital/servicenowqa/v1/incident",
+  "service_request_endpoint": "/digital/servicenowqa/v1/sc_request",
+  "incident_lookup_endpoint": "/digital/servicenowqa/v1/incident/query/",
+  "service_request_lookup_endpoint": "/digital/servicenowqa/v1/sc_req_item/query/",
+  "partner_id": "com.ge.corporate.iamopsportal"
+}

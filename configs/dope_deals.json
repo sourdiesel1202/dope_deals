@@ -1,0 +1,10 @@
+{
+  "location":"Morenci, MI",
+  "thc_limit": 20,
+  "cost_limit": 90,
+  "types": ["specials","flower"],
+  "delimiter": "}{",
+  "report_file": "dope_deals_report_{location}_{date}.xlsx",
+  "ignore_types": ["shake", "pre-ground", "pre ground", "smalls","popcorn"],
+  "urls": {"flower": "/products/flower", "pre-rolls": "/products/prerolls", "specials": "/specials"}
+}

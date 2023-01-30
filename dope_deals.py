@@ -24,6 +24,7 @@ module_config = load_module_config(__file__.split("/")[-1].split(".py")[0])
 #     return (hasattr(sys, 'real_prefix') or
 #             (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix))
 file_suffix = f"{datetime.now().strftime('%m-%d-%Y')}"
+global_items_of_interest=[]
 class Workbook:
     def __init__(self, name):
         self.sheets =[]
@@ -79,16 +80,32 @@ class THCObject:
         return self.quantity.replace('-', '').strip()
     def thc_content(self):
         return float(self.thc.replace("%",'').strip())
-    def calculate_gram_cost(self):
-        pass
     def cost(self):
         try:
             return float(self.price.replace("$", '').strip())
         except:
             return ""
 
+    def calculate_gram_cost(self):
+        quantity=self.smooth_quantity()
+        quantity = self.convert_to_grams(quantity)
+        if quantity > 1:
+            return self.cost()/quantity
+        elif quantity < 1:
+            return (1/quantity)*self.cost()
+        else:
+            return self.cost()
     def calculate_oz_cost(self):
-        pass
+        quantity = self.quantity.replace('-','').strip()
+
+        #convert to grams
+        quantity= self.convert_to_grams(quantity)
+        try:
+            cost = self.cost()
+        except:
+            pass
+        return cost*(28/quantity)
+
 class Special(THCObject):
     raw = ""
     type="Special"
@@ -130,29 +147,11 @@ class Special(THCObject):
                     return
 
 class VaporizerConcentrate(THCObject):
-    def calculate_gram_cost(self):
-        quantity=self.smooth_quantity()
-        quantity = self.convert_to_grams(quantity)
-        if quantity > 1:
-            return self.cost()/quantity
-        elif quantity < 1:
-            return (1/quantity)*self.cost()
-        else:
-            return self.cost()
+
     def __str__(self):
         return f"Producer: {self.producer} Name: {self.name} THC Content: {self.thc}% Cost Listed: {self.price}/{self.quantity} Cost: ${self.calculate_gram_cost()}/g"
 class Flower(THCObject):
 
-    def calculate_oz_cost(self):
-        quantity = self.quantity.replace('-','').strip()
-
-        #convert to grams
-        quantity= self.convert_to_grams(quantity)
-        try:
-            cost = self.cost()
-        except:
-            pass
-        return cost*(28/quantity)
 
     def __str__(self):
         return f"Grower: {self.producer} Name: {self.name} THC Content: {self.thc}% Cost: {self.price}/{self.quantity} OZ Cost: ${self.calculate_oz_cost()}/OZ"
@@ -203,10 +202,25 @@ def generate_vaporizer_concentrate_report(deal_dict,type):
     _report = []
     for dispo, deals in deal_dict.items():
         try:
+            deal_list=[]
             if type==DealType.VAPORIZERS:
-                deal_list = [x for x in deals if x.calculate_gram_cost() <= module_config['cost_limit_vaporizers'] and x.thc_content() >=module_config['thc_limit_vaporizers'] and not is_vaporizer_ignore_type(x) ]
+                # deal_list = [x for x in deals if x.calculate_gram_cost() <= module_config['cost_limit_vaporizers'] and x.thc_content() >=module_config['thc_limit_vaporizers'] and not is_vaporizer_ignore_type(x) ]
+                for x in deals:
+                    try:
+                        if x.calculate_gram_cost() <= module_config['cost_limit_vaporizers'] and x.thc_content()  >= module_config['thc_limit_vaporizeres'] and  not is_vaporizer_ignore_type(x):
+                            deal_list.append(x)
+                    except:
+                        traceback.print_exc()
+                        print(f"Could not generate deal for {x.name}")
             elif type==DealType.CONCENTRATES:
                 deal_list = [x for x in deals if x.calculate_gram_cost() <= module_config['cost_limit_concentrates'] and x.thc_content() >=module_config['thc_limit_concentrates'] and not is_concentrate_ignore_type(x) ]
+                for x in deals:
+                    try:
+                        if x.calculate_gram_cost() <= module_config['cost_limit_concentrates'] and x.thc_content() >=module_config['thc_limit_concentrates'] and not is_concentrate_ignore_type(x):
+                            deal_list.append(x)
+                    except:
+                        traceback.print_exc()
+                        print(f"Could not generate deal for {x.name}")
         except:
             traceback.print_exc()
             print(f"Could not generate deals for {dispo}")
@@ -236,17 +250,43 @@ def generate_vaporizer_concentrate_report(deal_dict,type):
     for thc_object in full_inventory[:150]:
         _report.append([thc_object.dispensary, thc_object.producer, thc_object.name, thc_object.type, thc_object.thc_content(), thc_object.smooth_quantity(), thc_object.cost(), thc_object.calculate_gram_cost()])
     return _report
+def generate_interesting_finds_report():
+    _report = [["Dispensary", "Producer", "Name", "Type", "THC Content", "Quantity As Sold", "Price As Sold",
+                    "Price Per Gram", "Price Per Ounce"]]
+    for thc_object in global_items_of_interest:
+        _report.append([thc_object.dispensary, thc_object.producer, thc_object.name, thc_object.type, thc_object.thc_content(),thc_object.smooth_quantity(), thc_object.cost(), thc_object.calculate_gram_cost(), thc_object.calculate_oz_cost()])
+    return _report
 def generate_flower_report(deal_dict):
     #ok so first things first lets sort this out soley by THC content and price
     full_inventory= []
     _report = []
     for dispo, deals in deal_dict.items():
         try:
-            deal_list = [x for x in deals if x.calculate_oz_cost() <= module_config['cost_limit_flower'] and x.thc_content() >=module_config['thc_limit_flower'] and not is_flower_ignore_type(x) ]
+            deal_list=[]
+            for x in deals:
+                try:
+                    if x.calculate_oz_cost() <= module_config['cost_limit_flower'] and x.thc_content() >= module_config['thc_limit_flower'] and not is_flower_ignore_type(x):
+                        deal_list.append(x)
+                except:
+                    print(f"Could not generate deal for {x.name}")
+                    traceback.print_exc()
+                    pass
+            # deal_list = [x for x in deals if x.calculate_oz_cost() <= module_config['cost_limit_flower'] and x.thc_content() >=module_config['thc_limit_flower'] and not is_flower_ignore_type(x) ]
         except:
             traceback.print_exc()
             print(f"Could not generate deals for {dispo}")
             continue
+        # deal_list =[]
+        # # try:
+        # for x in deals:
+        #     try:
+        #         if x.calculate_oz_cost() <= module_config['cost_limit_flower'] and x.thc_content() >=module_config['thc_limit_flower'] and not is_flower_ignore_type(x):
+        #             deals.append(x)
+        #     except:
+        #         traceback.print_exc()
+        #         print(f"Could not generate deals for {dispo}")
+        #         continue
+
         full_inventory = full_inventory+deal_list
         # print(f"")
         deal_list.sort(key=lambda x: x.thc_content(), reverse=True)
@@ -272,6 +312,7 @@ def generate_flower_report(deal_dict):
     for flower in full_inventory[:150]:
         _report.append([flower.dispensary, flower.producer, flower.name, flower.type, flower.thc_content(), flower.smooth_quantity(), flower.cost(), flower.calculate_oz_cost()])
     return _report
+
 def process_special_deals(deals,dispensary):
     _specials = []
     for deal in deals:
@@ -338,6 +379,9 @@ def process_thc_deals(deals, dispensary):
         # print(deal)
         # print(thc_object)
         thc_objects.append(thc_object)
+        for key in module_config['strain_keywords']:
+            if  key.lower() in thc_object.name.lower():
+                global_items_of_interest.append(thc_object)
 
     return thc_objects
 
@@ -415,27 +459,27 @@ if __name__ == "__main__":
         driver.get("https://dutchie.com/")
         age_restriction_btn = driver.find_element(By.CSS_SELECTOR,'button[data-test="age-restriction-yes"]')
         age_restriction_btn.click()
-        search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
-        search_bar.send_keys(module_config['location'])
-
-        # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
-        search_bar.click()
-        time.sleep(2)
-        location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
-        location.click()
-        time.sleep(3)
-        soup = BeautifulSoup(driver.page_source)
-        # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
-        # results = soup.find("a", data-testid='listbox--1')
-        dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
-        dispensaries = {}
-        for link in dispensary_links:
-            dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
-            # dis = [x.get_attribute('href') for x in dispensaries]
-        print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
-        dispo_str = '\n'.join(dispensaries.keys())
-        print(f"{dispo_str}\n")
-        # dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
+        # search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
+        # search_bar.send_keys(module_config['location'])
+        #
+        # # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
+        # search_bar.click()
+        # time.sleep(2)
+        # location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
+        # location.click()
+        # time.sleep(3)
+        # soup = BeautifulSoup(driver.page_source)
+        # # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
+        # # results = soup.find("a", data-testid='listbox--1')
+        # dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
+        # dispensaries = {}
+        # for link in dispensary_links:
+        #     dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
+        #     # dis = [x.get_attribute('href') for x in dispensaries]
+        # print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
+        # dispo_str = '\n'.join(dispensaries.keys())
+        # print(f"{dispo_str}\n")
+        dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
         # dispensaries={'Gage':{"url":'https://dutchie.com/dispensary/gage-cannabis-co-adrian'}}
         # dispensaries={'amazing-budz':{"url":'https://dutchie.com/dispensary/amazing-budz'}}
         # dispensaries={'heads-monroe':{"url":'https://dutchie.com/dispensary/heads-monroe'}}
@@ -458,6 +502,8 @@ if __name__ == "__main__":
                 write_csv(f"{type}.csv",generate_vaporizer_concentrate_report(deals, type))
             if type==DealType.SPECIALS:
                 write_csv(f"{type}.csv", generate_special_report(deals))
+        write_csv(f"interesting_finds.csv",generate_interesting_finds_report())
+        global_workbook.write_workbook()
     except:
         traceback.print_exc()
     #
@@ -465,6 +511,5 @@ if __name__ == "__main__":
 
     # cursor.close()
     # sp_connection.close()
-    global_workbook.write_workbook()
     print(f"\nCompleted in {int((int(time.time()) - start_time) / 60)} minutes and {int((int(time.time()) - start_time) % 60)} seconds")
 

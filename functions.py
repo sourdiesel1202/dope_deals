@@ -14,19 +14,25 @@ import cx_Oracle
 from subprocess import Popen, PIPE, STDOUT, call
 # import psycopg2
 import platform    # For getting the operating system name
-
+import re
 
 # import subprocess  # For executing a shell command
 start_time = time.time()
 file_suffix = f"{datetime.now().strftime('%m%d%Y_%H%M')}"
 MODE_ENCRYPT='encrypt'
 MODE_DECRYPT='decrypt'
+
 from encryption_tool import encrypt_message, decrypt_message
 from cron_descriptor import get_description as get_cron_description
 
 with open('./configs/project.json', 'r') as f:
     config = json.loads(f.read())
-
+def strip_alphabetic_chars(string):
+    return re.sub('[^0-9]', '', string)
+def strip_special_chars(string):
+    for x in "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~":
+        string=string.replace(x,'')
+    return string
 def is_venv():
     return (hasattr(sys, 'real_prefix') or
             (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix))

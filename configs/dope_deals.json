@@ -3,16 +3,19 @@
   "thc_limit_flower": 20,
   "cost_limit_flower": 70,
   "thc_limit_vaporizers": 65,
-  "thc_limit_concentrates": 65,
+  "thc_limit_edibles": 100,
   "cost_limit_vaporizers": 22,
+  "thc_limit_concentrates": 65,
   "cost_limit_concentrates": 22,
-  "types": ["concentrates","vaporizers"],
+  "cost_limit_edibles": 0.75,
+  "types": ["flower"],
   "delimiter": "}{",
   "report_file": "dope_deals_report_{location}_{date}.xlsx",
   "ignore_types_flower": ["shake", "pre-ground", "pre ground", "smalls","popcorn", "grind"],
   "ignore_types_concentrates": ["rso"],
   "ignore_types_vaporizers": ["all in one", "all-in-one", "c-cell", "pod", "vape"],
+  "ignore_types_edibles": ["all in one", "all-in-one", "c-cell", "pod", "vape"],
   "ignore_types": ["shake", "pre-ground", "pre ground", "smalls","popcorn", "grind"],
-  "urls": {"flower": "/products/flower", "pre-rolls": "/products/prerolls", "specials": "/specials", "vaporizers": "/products/vaporizers", "concentrates": "/products/concentrates"},
-  "strain_keywords": ["haze", "skywalker", "sky walker", "afghan","pakistan", "hindu", "maui","afgoo" ,"hindi","diesel","crack", "cheese"]
+  "urls": {"flower": "/products/flower", "pre-rolls": "/products/prerolls", "specials": "/specials", "vaporizers": "/products/vaporizers", "concentrates": "/products/concentrates", "edibles": "/products/edibles"},
+  "strain_keywords": ["haze", "skywalker", "sky walker", "afghan","pakistan", "hindu", "maui","afgoo" ,"hindi","diesel","crack", "cheese","dixie","khalifa", "syrup", "purple"]
 }

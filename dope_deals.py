@@ -3,13 +3,14 @@ import csv
 import itertools
 import os
 import traceback
+import re
 
 import cx_Oracle, json, pprint, sys, time
 from datetime import datetime
 import pandas as pd
 from pandas import ExcelWriter
 from selenium.webdriver.common.by import By
-from functions import  load_module_config
+from functions import  load_module_config,strip_special_chars,strip_alphabetic_chars
 from tabulate import tabulate
 # from ready_up import  initialize
 import requests
@@ -25,6 +26,7 @@ module_config = load_module_config(__file__.split("/")[-1].split(".py")[0])
 #             (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix))
 file_suffix = f"{datetime.now().strftime('%m-%d-%Y')}"
 global_items_of_interest=[]
+# "strain_keywords": ["haze", "skywalker", "sky walker", "afghan","pakistan", "hindu", "maui","afgoo" ,"hindi","diesel","crack", "cheese","dixie","khalifa", "syrup" ]
 class Workbook:
     def __init__(self, name):
         self.sheets =[]
@@ -76,10 +78,11 @@ class THCObject:
             except:
                 pass
         return float(quantity)
+
     def smooth_quantity(self):
         return self.quantity.replace('-', '').strip()
     def thc_content(self):
-        return float(self.thc.replace("%",'').strip())
+        return float(self.thc.replace("%",'').strip()) if isinstance(self.thc,str) else self.thc
     def cost(self):
         try:
             return float(self.price.replace("$", '').strip())
@@ -95,6 +98,8 @@ class THCObject:
             return (1/quantity)*self.cost()
         else:
             return self.cost()
+
+
     def calculate_oz_cost(self):
         quantity = self.quantity.replace('-','').strip()
 
@@ -105,7 +110,35 @@ class THCObject:
         except:
             pass
         return cost*(28/quantity)
+class Edible(THCObject):
+    def is_dosage(self, string):
+        pattern = re.compile(r"^.*mg$", re.IGNORECASE)
+        return pattern.match(string)
 
+    def smooth_edible_data(self):
+        dosages = []
+        for string in self.name.split(" "):
+            if self.is_dosage(string):
+                dosages.append(strip_special_chars(string).replace('mg',''))
+                if 'x' in  dosages[-1]:
+                    data = dosages[-1].lower().split('x')
+                    dosages[-1] = int(strip_alphabetic_chars(data[0])) * int(strip_alphabetic_chars(data[1]))
+                else:
+                    dosages[-1]=int(strip_alphabetic_chars(dosages[-1]))
+        if len(dosages) >0:
+            self.thc=max(dosages)
+        else:
+            self.thc=0 #zero out
+
+    def calculate_10mg_cost(self):
+        # dose = 200
+        # price = 1/0
+        self.smooth_edible_data()
+        divider = self.thc / 10
+        print(divider)
+        return self.cost() / divider
+
+        pass
 class Special(THCObject):
     raw = ""
     type="Special"
@@ -178,6 +211,10 @@ def is_flower_ignore_type(flower):
             return True
 def is_vaporizer_ignore_type(thc_object):
     for ignore_type in module_config['ignore_types_vaporizers']:
+        if ignore_type in thc_object.name.lower():
+            return True
+def is_edible_type_ignore(thc_object):
+    for ignore_type in module_config['ignore_types_edibles']:
         if ignore_type in thc_object.name.lower():
             return True
 def is_concentrate_ignore_type(thc_object):
@@ -255,6 +292,52 @@ def generate_interesting_finds_report():
                     "Price Per Gram", "Price Per Ounce"]]
     for thc_object in global_items_of_interest:
         _report.append([thc_object.dispensary, thc_object.producer, thc_object.name, thc_object.type, thc_object.thc_content(),thc_object.smooth_quantity(), thc_object.cost(), thc_object.calculate_gram_cost(), thc_object.calculate_oz_cost()])
+    return _report
+def generate_edible_report(deal_dict):
+    #ok so first things first lets sort this out soley by THC content and price
+    full_inventory= []
+    _report = []
+    for dispo, deals in deal_dict.items():
+        try:
+            deal_list=[]
+            for x in deals:
+                try:
+                    x.smooth_edible_data()
+                    if x.calculate_10mg_cost() <= module_config['cost_limit_edibles'] and x.thc_content() >= module_config['thc_limit_edibles'] and not is_edible_type_ignore(x):
+                        deal_list.append(x)
+                except:
+                    print(f"Could not generate deal for {x.name}")
+                    traceback.print_exc()
+                    pass
+            # deal_list = [x for x in deals if x.calculate_oz_cost() <= module_config['cost_limit_flower'] and x.thc_content() >=module_config['thc_limit_flower'] and not is_flower_ignore_type(x) ]
+        except:
+            traceback.print_exc()
+            print(f"Could not generate deals for {dispo}")
+            continue
+        full_inventory = full_inventory+deal_list
+        # print(f"")
+        deal_list.sort(key=lambda x: x.thc_content(), reverse=True)
+        deal_list_str = '\n'.join([str(x) for x in deal_list])
+        print(f"Deals sorted by THC: {dispo}\n{deal_list_str}")
+        print("\n")
+        # print(f"")
+        deal_list.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
+        deal_list_str = '\n'.join([str(x) for x in deal_list])
+        print(f"Deals sorted by Price: {dispo}\n{deal_list_str}")
+        print("\n")
+
+    full_inventory.sort(key=lambda x: x.thc_content(), reverse=True)
+    print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by THC Content")
+    print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
+    print("\n")
+    full_inventory.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
+    print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by Cost")
+    print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
+    print("\n")
+
+    _report.append(["Dispensary", "Producer", "Name", "Type", "THC Content", "Quantity As Sold", "Price As Sold", "Price Per Gram"])
+    for edible in full_inventory[:150]:
+        _report.append([edible.dispensary, edible.producer, edible.name, edible.type, edible.thc_content(), edible.smooth_quantity(), edible.cost(), edible.calculate_10mg_cost()])
     return _report
 def generate_flower_report(deal_dict):
     #ok so first things first lets sort this out soley by THC content and price
@@ -346,7 +429,7 @@ def process_thc_deals(deals, dispensary):
         if type == DealType.VAPORIZERS or  type == DealType.CONCENTRATES:
             thc_object=VaporizerConcentrate()
         if type == DealType.EDIBLES:
-            thc_object=THCObject()
+            thc_object=Edible()
         thc_object.raw =data
         while data[0] in ['Staff Pick','Special offer'] or '$' in data[0]:
             del data[0]
@@ -371,18 +454,30 @@ def process_thc_deals(deals, dispensary):
 
         if '%' in data[-1]:
             thc_object.price=data[-2]
-            thc_object.quantity = data[-3] if '$' not in data[-3] else data[-4]
+            if type==DealType.EDIBLES:
+                thc_object.quantity='1'
+            else:
+                thc_object.quantity = data[-3] if '$' not in data[-3] else data[-4]
 
         else:
             thc_object.price=data[-1]
-            thc_object.quantity = data[-2]
+            if type==DealType.EDIBLES:
+                thc_object.quantity='1'
+            else:
+                thc_object.quantity = data[-2]
         # print(deal)
         # print(thc_object)
+        if type==DealType.EDIBLES:
+            try:
+                thc_object.smooth_edible_data()
+            except:
+                traceback.print_exc()
+                pass
         thc_objects.append(thc_object)
         for key in module_config['strain_keywords']:
             if  key.lower() in thc_object.name.lower():
                 global_items_of_interest.append(thc_object)
-
+    # thc_object.calculate_10mg_cost()
     return thc_objects
 
 
@@ -459,27 +554,27 @@ if __name__ == "__main__":
         driver.get("https://dutchie.com/")
         age_restriction_btn = driver.find_element(By.CSS_SELECTOR,'button[data-test="age-restriction-yes"]')
         age_restriction_btn.click()
-        # search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
-        # search_bar.send_keys(module_config['location'])
-        #
-        # # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
-        # search_bar.click()
-        # time.sleep(2)
-        # location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
-        # location.click()
-        # time.sleep(3)
-        # soup = BeautifulSoup(driver.page_source)
-        # # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
-        # # results = soup.find("a", data-testid='listbox--1')
-        # dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
-        # dispensaries = {}
-        # for link in dispensary_links:
-        #     dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
-        #     # dis = [x.get_attribute('href') for x in dispensaries]
-        # print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
-        # dispo_str = '\n'.join(dispensaries.keys())
-        # print(f"{dispo_str}\n")
-        dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
+        search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
+        search_bar.send_keys(module_config['location'])
+
+        # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
+        search_bar.click()
+        time.sleep(2)
+        location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
+        location.click()
+        time.sleep(3)
+        soup = BeautifulSoup(driver.page_source)
+        # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
+        # results = soup.find("a", data-testid='listbox--1')
+        dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
+        dispensaries = {}
+        for link in dispensary_links:
+            dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
+            # dis = [x.get_attribute('href') for x in dispensaries]
+        print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
+        dispo_str = '\n'.join(dispensaries.keys())
+        print(f"{dispo_str}\n")
+        # dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
         # dispensaries={'Gage':{"url":'https://dutchie.com/dispensary/gage-cannabis-co-adrian'}}
         # dispensaries={'amazing-budz':{"url":'https://dutchie.com/dispensary/amazing-budz'}}
         # dispensaries={'heads-monroe':{"url":'https://dutchie.com/dispensary/heads-monroe'}}
@@ -502,6 +597,8 @@ if __name__ == "__main__":
                 write_csv(f"{type}.csv",generate_vaporizer_concentrate_report(deals, type))
             if type==DealType.SPECIALS:
                 write_csv(f"{type}.csv", generate_special_report(deals))
+            if type==DealType.EDIBLES:
+                write_csv(f"{type}.csv", generate_edible_report(deals))
         write_csv(f"interesting_finds.csv",generate_interesting_finds_report())
         global_workbook.write_workbook()
     except:

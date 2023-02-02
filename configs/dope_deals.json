@@ -1,14 +1,15 @@
 {
-  "location":"Monroe, MI",
+  "location":"Billings, MT",
   "thc_limit_flower": 20,
-  "cost_limit_flower": 70,
-  "thc_limit_vaporizers": 65,
+  "process_load_size": 5,
+  "cost_limit_flower": 120,
+  "thc_limit_vaporizers": 75,
   "thc_limit_edibles": 100,
-  "cost_limit_vaporizers": 22,
-  "thc_limit_concentrates": 65,
-  "cost_limit_concentrates": 22,
-  "cost_limit_edibles": 0.75,
-  "types": ["flower"],
+  "cost_limit_vaporizers": 25,
+  "thc_limit_concentrates": 74,
+  "cost_limit_concentrates": 20,
+  "cost_limit_edibles": 1.50,
+  "types": ["flower", "specials"],
   "delimiter": "}{",
   "report_file": "dope_deals_report_{location}_{date}.xlsx",
   "ignore_types_flower": ["shake", "pre-ground", "pre ground", "smalls","popcorn", "grind"],
@@ -17,5 +18,5 @@
   "ignore_types_edibles": ["all in one", "all-in-one", "c-cell", "pod", "vape"],
   "ignore_types": ["shake", "pre-ground", "pre ground", "smalls","popcorn", "grind"],
   "urls": {"flower": "/products/flower", "pre-rolls": "/products/prerolls", "specials": "/specials", "vaporizers": "/products/vaporizers", "concentrates": "/products/concentrates", "edibles": "/products/edibles"},
-  "strain_keywords": ["haze", "skywalker", "sky walker", "afghan","pakistan", "hindu", "maui","afgoo" ,"hindi","diesel","crack", "cheese","dixie","khalifa", "syrup", "purple"]
+  "strain_keywords": ["haze", "skywalker", "sky walker", "afghan","pakistan", "hindu", "maui","afgoo" ,"hindi","diesel","crack", "cheese","dixie","khalifa", "syrup", "purple", "northern", "rainbow", "michigan"]
 }

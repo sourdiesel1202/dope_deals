@@ -1,6 +1,7 @@
 #!/app/virtualenv/bin/python3
 import csv
 import itertools
+import multiprocessing
 import os
 import traceback
 import re
@@ -10,7 +11,7 @@ from datetime import datetime
 import pandas as pd
 from pandas import ExcelWriter
 from selenium.webdriver.common.by import By
-from functions import  load_module_config,strip_special_chars,strip_alphabetic_chars
+from functions import  load_module_config,strip_special_chars,strip_alphabetic_chars,read_csv, write_csv as _write_csv
 from tabulate import tabulate
 # from ready_up import  initialize
 import requests
@@ -102,8 +103,8 @@ class THCObject:
 
     def calculate_oz_cost(self):
         quantity = self.quantity.replace('-','').strip()
-
-        #convert to grams
+        # self.
+        #conver1t to grams
         quantity= self.convert_to_grams(quantity)
         try:
             cost = self.cost()
@@ -188,7 +189,29 @@ class Flower(THCObject):
 
     def __str__(self):
         return f"Grower: {self.producer} Name: {self.name} THC Content: {self.thc}% Cost: {self.price}/{self.quantity} OZ Cost: ${self.calculate_oz_cost()}/OZ"
+def combine_outputs(pids, type):
+    '''
+    This function combines a series of output csvs into a single file. This is required as this script is multi-processed and issues can occur writing to the same file
+    :param pids: the list of child processes that have written files
+    :param environment: the environment the files are written in. this corresponds to a directory name in extracts/
+    :return:
+    '''
+    print(f"Combining {len(pids)} .csv files from child processes into a singular extract")
+    pass
+    rows = []
+    for i in range(0, len(pids)):
+        print(f"Processing {type}{pids[i]}.csv")
+        if i==0:
+            #base case
+            rows=read_csv(f"{type}{pids[i]}.csv")
+        else:
+            print(f"reading from temp file {type}{pids[i]}.csv")
+            tmp_rows = read_csv(f"{type}{pids[i]}.csv")
+            for i in range(1, len(tmp_rows)):
+                rows.append(tmp_rows[i])
 
+    print(f"writing extraction file to {type}.csv")
+    write_csv(f'{type}.csv',rows)
 def write_csv(filename, rows):
     with open(filename  , 'w', newline='') as f:
         writer = csv.writer(f)
@@ -291,7 +314,11 @@ def generate_interesting_finds_report():
     _report = [["Dispensary", "Producer", "Name", "Type", "THC Content", "Quantity As Sold", "Price As Sold",
                     "Price Per Gram", "Price Per Ounce"]]
     for thc_object in global_items_of_interest:
-        _report.append([thc_object.dispensary, thc_object.producer, thc_object.name, thc_object.type, thc_object.thc_content(),thc_object.smooth_quantity(), thc_object.cost(), thc_object.calculate_gram_cost(), thc_object.calculate_oz_cost()])
+        try:
+            _report.append([thc_object.dispensary, thc_object.producer, thc_object.name, thc_object.type, thc_object.thc,thc_object.smooth_quantity(), thc_object.cost(), thc_object.calculate_gram_cost(), thc_object.calculate_oz_cost()])
+        except:
+            traceback.print_exc()
+            print(f"Could not process interesting find: {thc_object.name}")
     return _report
 def generate_edible_report(deal_dict):
     #ok so first things first lets sort this out soley by THC content and price
@@ -316,24 +343,24 @@ def generate_edible_report(deal_dict):
             continue
         full_inventory = full_inventory+deal_list
         # print(f"")
-        deal_list.sort(key=lambda x: x.thc_content(), reverse=True)
-        deal_list_str = '\n'.join([str(x) for x in deal_list])
-        print(f"Deals sorted by THC: {dispo}\n{deal_list_str}")
-        print("\n")
-        # print(f"")
-        deal_list.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
-        deal_list_str = '\n'.join([str(x) for x in deal_list])
-        print(f"Deals sorted by Price: {dispo}\n{deal_list_str}")
-        print("\n")
-
-    full_inventory.sort(key=lambda x: x.thc_content(), reverse=True)
-    print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by THC Content")
-    print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
-    print("\n")
-    full_inventory.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
-    print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by Cost")
-    print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
-    print("\n")
+    #     deal_list.sort(key=lambda x: x.thc_content(), reverse=True)
+    #     deal_list_str = '\n'.join([str(x) for x in deal_list])
+    #     print(f"Deals sorted by THC: {dispo}\n{deal_list_str}")
+    #     print("\n")
+    #     # print(f"")
+    #     deal_list.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
+    #     deal_list_str = '\n'.join([str(x) for x in deal_list])
+    #     print(f"Deals sorted by Price: {dispo}\n{deal_list_str}")
+    #     print("\n")
+    #
+    # full_inventory.sort(key=lambda x: x.thc_content(), reverse=True)
+    # print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by THC Content")
+    # print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
+    # print("\n")
+    # full_inventory.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
+    # print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by Cost")
+    # print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
+    # print("\n")
 
     _report.append(["Dispensary", "Producer", "Name", "Type", "THC Content", "Quantity As Sold", "Price As Sold", "Price Per Gram"])
     for edible in full_inventory[:150]:
@@ -373,23 +400,23 @@ def generate_flower_report(deal_dict):
         full_inventory = full_inventory+deal_list
         # print(f"")
         deal_list.sort(key=lambda x: x.thc_content(), reverse=True)
-        deal_list_str = '\n'.join([str(x) for x in deal_list])
-        print(f"Deals sorted by THC: {dispo}\n{deal_list_str}")
-        print("\n")
+        # deal_list_str = '\n'.join([str(x) for x in deal_list])
+        # print(f"Deals sorted by THC: {dispo}\n{deal_list_str}")
+        # print("\n")
         # print(f"")
         deal_list.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
-        deal_list_str = '\n'.join([str(x) for x in deal_list])
-        print(f"Deals sorted by Price: {dispo}\n{deal_list_str}")
-        print("\n")
+        # deal_list_str = '\n'.join([str(x) for x in deal_list])
+        # print(f"Deals sorted by Price: {dispo}\n{deal_list_str}")
+        # print("\n")
 
-    full_inventory.sort(key=lambda x: x.thc_content(), reverse=True)
-    print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by THC Content")
-    print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
-    print("\n")
-    full_inventory.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
-    print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by Cost")
-    print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
-    print("\n")
+    # full_inventory.sort(key=lambda x: x.thc_content(), reverse=True)
+    # print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by THC Content")
+    # print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
+    # print("\n")
+    # full_inventory.sort(key=lambda x: x.calculate_oz_cost(), reverse=False)
+    # print(f"A full inventory listing is below (sorted to your liking), limited to the first 100 by Cost")
+    # print('\n'.join([f"{x.dispensary}- {str(x)}" for x in full_inventory[:100]]))
+    # print("\n")
 
     _report.append(["Dispensary", "Grower", "Name", "Type", "THC Content", "Quantity As Sold", "Price As Sold", "Price Per Ounce"])
     for flower in full_inventory[:150]:
@@ -430,6 +457,8 @@ def process_thc_deals(deals, dispensary):
             thc_object=VaporizerConcentrate()
         if type == DealType.EDIBLES:
             thc_object=Edible()
+        else:
+            thc_object=THCObject()
         thc_object.raw =data
         while data[0] in ['Staff Pick','Special offer'] or '$' in data[0]:
             del data[0]
@@ -496,6 +525,7 @@ def load_specials(driver):
     return elements
 def find_specials(driver, dispensary):
     specials =scrape_data(load_specials(driver))
+    # driver.quit()
     return process_special_deals(specials, dispensary)
     pass
 def load_products(driver):
@@ -526,6 +556,7 @@ def find_deals(driver,dispensary, type=DealType.FLOWER):
             gt_100=False
         else:
             page+=1
+    # driver.quit()
     return process_thc_deals(deals,dispensary)
     #     # print('\n'.join([str(x) for x in strains]))
     #     # scrape_flower_deals(products)
@@ -537,6 +568,30 @@ def find_deals(driver,dispensary, type=DealType.FLOWER):
     #     return process_thc_deals(deals,dispensary)
     # if type==DealType.EDIBLES:
     #     pass
+
+def scrape_dispensary(dispensary,url):
+    driver = webdriver.Chrome('../chromedriver')
+    driver.get("https://dutchie.com/")
+    age_restriction_btn = driver.find_element(By.CSS_SELECTOR, 'button[data-test="age-restriction-yes"]')
+    age_restriction_btn.click()
+    deals = {}
+    for type in module_config['types']:
+        print(f"Loading {type} deals for {dispensary}")
+        url=f"{url}{module_config['urls'][type]}"
+        driver.get(url)
+        if type!=DealType.SPECIALS:
+            deals[dispensary]=find_deals(driver,dispensary, type=type)
+        else:
+            deals[dispensary] = find_specials(driver, dispensary)
+        if type==DealType.FLOWER:
+            _write_csv(f"{type}{os.getpid()}.csv",generate_flower_report(deals))
+        if type==DealType.VAPORIZERS or  type == DealType.CONCENTRATES:
+            _write_csv(f"{type}{os.getpid()}.csv",generate_vaporizer_concentrate_report(deals, type))
+        if type==DealType.SPECIALS:
+            _write_csv(f"{type}{os.getpid()}.csv", generate_special_report(deals))
+        if type==DealType.EDIBLES:
+            _write_csv(f"{type}{os.getpid()}.csv", generate_edible_report(deals))
+    _write_csv(f"interesting_finds{os.getpid()}.csv",generate_interesting_finds_report())
 
 if __name__ == "__main__":
     # print(is_venv())
@@ -559,7 +614,7 @@ if __name__ == "__main__":
 
         # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
         search_bar.click()
-        time.sleep(2)
+        time.sleep(10)
         location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
         location.click()
         time.sleep(3)
@@ -574,32 +629,63 @@ if __name__ == "__main__":
         print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
         dispo_str = '\n'.join(dispensaries.keys())
         print(f"{dispo_str}\n")
+        driver.quit()
         # dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
         # dispensaries={'Gage':{"url":'https://dutchie.com/dispensary/gage-cannabis-co-adrian'}}
         # dispensaries={'amazing-budz':{"url":'https://dutchie.com/dispensary/amazing-budz'}}
         # dispensaries={'heads-monroe':{"url":'https://dutchie.com/dispensary/heads-monroe'}}
         # for k, v in dispensaries.items():
-        dispos = [x for x in dispensaries.keys()]
+        # dispos = [x for x in dispensaries.keys()]
+        processes = {}
+        n=module_config['process_load_size']
+        _dispensarys = [x for x in dispensaries.keys()]
+        task_loads = [_dispensarys[i:i + n] for i in range(0, len(_dispensarys), n)]
+        # for k,v in dispensaries.items():
+        print(f"Processing {len(dispensaries.keys())} in {len(task_loads)} load(s)")
+        for i in range(0,len(task_loads)):
+            print(f"Blowing {i + 1}/{len(task_loads)} Loads")
+            load=task_loads[i]
+            for ii in range(0,len(load)):
 
+                p = multiprocessing.Process(target=scrape_dispensary, args=(load[ii],dispensaries[load[ii]]['url']))
+                p.start()
+
+                processes[str(p.pid)] = p
+            while any(processes[p].is_alive() for p in processes.keys()):
+                # print(f"Waiting for {len([x for x in processes if x.is_alive()])} processes to complete. Going to sleep for 10 seconds")
+                process_str = ','.join([str(v.pid) for v in processes.values() if v.is_alive()])
+                print(f"The following child processes are still running: {process_str}")
+                time.sleep(10)
+
+        print(f"All loads have been blown, generating your report")
+        module_config['types'].append('interesting_finds')
         for type in module_config['types']:
-            deals = {}
-            for i in range(0,len(dispos)):
-
-                print(f"Loading {type} deals for {dispos[i]} {i+1}/{len(dispos)}")
-                driver.get(f"{dispensaries[dispos[i]]['url']}{module_config['urls'][type]}")
-                if type!=DealType.SPECIALS:
-                    deals[dispos[i]]=find_deals(driver,dispos[i], type=type)
-                else:
-                    deals[dispos[i]] = find_specials(driver, dispos[i])
-            if type==DealType.FLOWER:
-                write_csv(f"{type}.csv",generate_flower_report(deals))
-            if type==DealType.VAPORIZERS or  type == DealType.CONCENTRATES:
-                write_csv(f"{type}.csv",generate_vaporizer_concentrate_report(deals, type))
-            if type==DealType.SPECIALS:
-                write_csv(f"{type}.csv", generate_special_report(deals))
-            if type==DealType.EDIBLES:
-                write_csv(f"{type}.csv", generate_edible_report(deals))
-        write_csv(f"interesting_finds.csv",generate_interesting_finds_report())
+            combine_outputs([x for x in processes.keys()],type)
+            for pid in processes.keys():
+                os.remove(f"{type}{pid}.csv")
+        driver.quit()
+        #3@tD@tPu55y
+        #L1ckD@tPu55y
+        #3@tD@tPu55y
+        # for type in module_config['types']:
+        #     deals = {}
+        #     for i in range(0,len(dispos)):
+        #
+        #         print(f"Loading {type} deals for {dispos[i]} {i+1}/{len(dispos)}")
+        #         driver.get(f"{dispensaries[dispos[i]]['url']}{module_config['urls'][type]}")
+        #         if type!=DealType.SPECIALS:
+        #             deals[dispos[i]]=find_deals(driver,dispos[i], type=type)
+        #         else:
+        #             deals[dispos[i]] = find_specials(driver, dispos[i])
+        #     if type==DealType.FLOWER:
+        #         write_csv(f"{type}.csv",generate_flower_report(deals))
+        #     if type==DealType.VAPORIZERS or  type == DealType.CONCENTRATES:
+        #         write_csv(f"{type}.csv",generate_vaporizer_concentrate_report(deals, type))
+        #     if type==DealType.SPECIALS:
+        #         write_csv(f"{type}.csv", generate_special_report(deals))
+        #     if type==DealType.EDIBLES:
+        #         write_csv(f"{type}.csv", generate_edible_report(deals))
+        # write_csv(f"interesting_finds.csv",generate_interesting_finds_report())
         global_workbook.write_workbook()
     except:
         traceback.print_exc()

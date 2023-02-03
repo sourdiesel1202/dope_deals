@@ -10,6 +10,7 @@ import cx_Oracle, json, pprint, sys, time
 from datetime import datetime
 import pandas as pd
 from pandas import ExcelWriter
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from functions import  load_module_config,strip_special_chars,strip_alphabetic_chars,read_csv, write_csv as _write_csv
 from tabulate import tabulate
@@ -570,15 +571,13 @@ def find_deals(driver,dispensary, type=DealType.FLOWER):
     #     pass
 
 def scrape_dispensary(dispensary,url):
-    driver = webdriver.Chrome('../chromedriver')
-    driver.get("https://dutchie.com/")
-    age_restriction_btn = driver.find_element(By.CSS_SELECTOR, 'button[data-test="age-restriction-yes"]')
-    age_restriction_btn.click()
+
     deals = {}
     for type in module_config['types']:
+        driver= build_webdriver()
         print(f"Loading {type} deals for {dispensary}")
-        url=f"{url}{module_config['urls'][type]}"
-        driver.get(url)
+        _url=f"{url}{module_config['urls'][type]}"
+        driver.get(_url)
         if type!=DealType.SPECIALS:
             deals[dispensary]=find_deals(driver,dispensary, type=type)
         else:
@@ -592,7 +591,44 @@ def scrape_dispensary(dispensary,url):
         if type==DealType.EDIBLES:
             _write_csv(f"{type}{os.getpid()}.csv", generate_edible_report(deals))
     _write_csv(f"interesting_finds{os.getpid()}.csv",generate_interesting_finds_report())
+def build_webdriver():
+    CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+    CHROMEDRIVER_PATH ='../chromedriver'
+    WINDOW_SIZE = "1920,1080"
 
+    chrome_options = Options()
+    chrome_options.headless=True
+    chrome_options.add_argument("--start-minimized")
+    chrome_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+
+    driver = webdriver.Chrome(executable_path='../chromedriver', chrome_options=chrome_options)
+    # driver = webdriver.Chrome('../chromedriver')
+    driver.get("https://dutchie.com/")
+    age_restriction_btn = driver.find_element(By.CSS_SELECTOR, 'button[data-test="age-restriction-yes"]')
+    age_restriction_btn.click()
+    return driver
+def load_dispensaries(driver):
+
+
+    search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
+    search_bar.send_keys(module_config['location'])
+
+    # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
+    search_bar.click()
+    time.sleep(10)
+    location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
+    location.click()
+    time.sleep(3)
+    soup = BeautifulSoup(driver.page_source)
+    # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
+    # results = soup.find("a", data-testid='listbox--1')
+    dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
+    dispensaries = {}
+    for link in dispensary_links:
+        dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
+        # dis = [x.get_attribute('href') for x in dispensaries]
+    print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
+    return dispensaries
 if __name__ == "__main__":
     # print(is_venv())
     # _input= read_csv('encodings_are_dumb.csv')
@@ -605,31 +641,16 @@ if __name__ == "__main__":
 
 
     try:
-        driver = webdriver.Chrome('./chromedriver')
-        driver.get("https://dutchie.com/")
-        age_restriction_btn = driver.find_element(By.CSS_SELECTOR,'button[data-test="age-restriction-yes"]')
-        age_restriction_btn.click()
-        search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
-        search_bar.send_keys(module_config['location'])
+        driver = build_webdriver()
+        # driver.get("https://dutchie.com/")
+        # age_restriction_btn = driver.find_element(By.CSS_SELECTOR,'button[data-test="age-restriction-yes"]')
+        # age_restriction_btn.click()
 
-        # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
-        search_bar.click()
-        time.sleep(10)
-        location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
-        location.click()
-        time.sleep(3)
-        soup = BeautifulSoup(driver.page_source)
-        # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
-        # results = soup.find("a", data-testid='listbox--1')
-        dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
-        dispensaries = {}
-        for link in dispensary_links:
-            dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
-            # dis = [x.get_attribute('href') for x in dispensaries]
-        print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
-        dispo_str = '\n'.join(dispensaries.keys())
-        print(f"{dispo_str}\n")
-        driver.quit()
+
+        # dispo_str = '\n'.join(dispensaries.keys())
+        # print(f"{dispo_str}\n")
+        # driver.quit()
+        dispensaries = load_dispensaries(driver)
         # dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
         # dispensaries={'Gage':{"url":'https://dutchie.com/dispensary/gage-cannabis-co-adrian'}}
         # dispensaries={'amazing-budz':{"url":'https://dutchie.com/dispensary/amazing-budz'}}
@@ -654,7 +675,8 @@ if __name__ == "__main__":
             while any(processes[p].is_alive() for p in processes.keys()):
                 # print(f"Waiting for {len([x for x in processes if x.is_alive()])} processes to complete. Going to sleep for 10 seconds")
                 process_str = ','.join([str(v.pid) for v in processes.values() if v.is_alive()])
-                print(f"The following child processes are still running: {process_str}")
+                time_str = f"{int((int(time.time()) - start_time) / 60)} minutes and {int((int(time.time()) - start_time) % 60)} seconds"
+                print(f"Waiting on {len(processes.keys())} processes to finish in load {i + 1}/{len(task_loads)}\nElapsed Time: {time_str}")
                 time.sleep(10)
 
         print(f"All loads have been blown, generating your report")
@@ -664,28 +686,7 @@ if __name__ == "__main__":
             for pid in processes.keys():
                 os.remove(f"{type}{pid}.csv")
         driver.quit()
-        #3@tD@tPu55y
-        #L1ckD@tPu55y
-        #3@tD@tPu55y
-        # for type in module_config['types']:
-        #     deals = {}
-        #     for i in range(0,len(dispos)):
-        #
-        #         print(f"Loading {type} deals for {dispos[i]} {i+1}/{len(dispos)}")
-        #         driver.get(f"{dispensaries[dispos[i]]['url']}{module_config['urls'][type]}")
-        #         if type!=DealType.SPECIALS:
-        #             deals[dispos[i]]=find_deals(driver,dispos[i], type=type)
-        #         else:
-        #             deals[dispos[i]] = find_specials(driver, dispos[i])
-        #     if type==DealType.FLOWER:
-        #         write_csv(f"{type}.csv",generate_flower_report(deals))
-        #     if type==DealType.VAPORIZERS or  type == DealType.CONCENTRATES:
-        #         write_csv(f"{type}.csv",generate_vaporizer_concentrate_report(deals, type))
-        #     if type==DealType.SPECIALS:
-        #         write_csv(f"{type}.csv", generate_special_report(deals))
-        #     if type==DealType.EDIBLES:
-        #         write_csv(f"{type}.csv", generate_edible_report(deals))
-        # write_csv(f"interesting_finds.csv",generate_interesting_finds_report())
+
         global_workbook.write_workbook()
     except:
         traceback.print_exc()

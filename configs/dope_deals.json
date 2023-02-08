@@ -1,8 +1,8 @@
 {
-  "location":"Ann Arbor, MI",
+  "location":"Adrian, MI",
   "thc_limit_flower": 20,
-  "process_load_size": 10,
-  "cost_limit_flower": 70,
+  "process_load_size": 5,
+  "cost_limit_flower": 101,
   "thc_limit_vaporizers": 75,
   "thc_limit_edibles": 100,
   "cost_limit_vaporizers": 25,
@@ -12,11 +12,12 @@
   "types": ["flower","specials"],
   "delimiter": "}{",
   "report_file": "dope_deals_report_{location}_{date}.xlsx",
+  "run_history_file": "run_history.log",
   "ignore_types_flower": ["shake", "pre-ground", "pre ground", "smalls","popcorn", "grind"],
   "ignore_types_concentrates": ["rso"],
   "ignore_types_vaporizers": ["all in one", "all-in-one", "c-cell", "pod", "vape"],
   "ignore_types_edibles": ["all in one", "all-in-one", "c-cell", "pod", "vape"],
   "ignore_types": ["shake", "pre-ground", "pre ground", "smalls","popcorn", "grind"],
   "urls": {"flower": "/products/flower", "pre-rolls": "/products/prerolls", "specials": "/specials", "vaporizers": "/products/vaporizers", "concentrates": "/products/concentrates", "edibles": "/products/edibles"},
-  "strain_keywords": ["haze", "skywalker", "sky walker", "afghan","pakistan", "hindu", "maui","afgoo" ,"hindi","diesel","crack", "cheese","khalifa", "purple", "northern", "rainbow", "michigan", "berry"]
+  "strain_keywords": [" og","kush","berry","special","northern","rainbow","morocc","haze", "skywalker", "sky walker", "afghan","pakistan", "hindu", "maui","afgoo" ,"hindi","diesel","crack", "cheese","dixie","khalifa", "syrup", "michigan", "deathstar","death star", "india","purple","grand"]
 }

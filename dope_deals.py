@@ -12,6 +12,8 @@ import pandas as pd
 from pandas import ExcelWriter
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 from functions import  load_module_config,strip_special_chars,strip_alphabetic_chars,read_csv, write_csv as _write_csv
 from tabulate import tabulate
 # from ready_up import  initialize
@@ -60,6 +62,10 @@ class THCObject:
     thc = ""
     quantity = ""
     price = ""
+    raw = ""
+    def is_cost(self,str_cost):
+        pattern = re.compile(r"^\$\d*\.?\d*$", re.IGNORECASE)
+        return pattern.match(str_cost)
     def convert_to_grams(self,quantity):
         # quantity=
         if 'oz' in quantity:
@@ -78,6 +84,8 @@ class THCObject:
             try:
                 quantity = float(quantity.replace('g', '').strip())
             except:
+                traceback.print_exc()
+                print(f"Could not convert quantity to grams")
                 pass
         return float(quantity)
 
@@ -87,9 +95,29 @@ class THCObject:
         return float(self.thc.replace("%",'').strip()) if isinstance(self.thc,str) else self.thc
     def cost(self):
         try:
-            return float(self.price.replace("$", '').strip())
+
+            if '$' not in self.price:
+                found_costs =[]
+                for item in self.raw:
+                    if self.is_cost(item):
+                        found_costs.append(int(item.replace('$','').strip()))
+                try:
+                    if len(found_costs)>0:
+                        self.price=f"${max(found_costs)}"
+                    else:
+                        print(f"Found no cost data for {' '.join(self.raw)}")
+                        return 9999
+                except:
+                    traceback.print_exc()
+                    print(f"COuld not generate cost data for {' '.join(self.raw)}: {self.dispensary}")
+                    return 9999
+
+            val = float(self.price.replace("$", '').strip())
+            return val
         except:
-            return ""
+            traceback.print_exc()
+            print(f"COuld not generate cost data for {' '.join(self.raw)}: {self.dispensary}")
+            return 9999
 
     def calculate_gram_cost(self):
         quantity=self.smooth_quantity()
@@ -108,10 +136,12 @@ class THCObject:
         #conver1t to grams
         quantity= self.convert_to_grams(quantity)
         try:
-            cost = self.cost()
+            _cost = self.cost()
         except:
+            traceback.print_exc()
+            print(f"COuld not calculate data to OZ for {self.name}: {self.dispensary}")
             pass
-        return cost*(28/quantity)
+        return _cost*(28/quantity)
 class Edible(THCObject):
     def is_dosage(self, string):
         pattern = re.compile(r"^.*mg$", re.IGNORECASE)
@@ -142,7 +172,7 @@ class Edible(THCObject):
 
         pass
 class Special(THCObject):
-    raw = ""
+
     type="Special"
     thc="n/a"
     producer = ""
@@ -226,12 +256,14 @@ def scrape_data(data):
         try:
             results.append(element.text.replace("\n",module_config['delimiter']))
         except:
+            traceback.print_exc()
+            print(f"could not load data for element {element.text}")
             pass
     return results
 #     pass
 def is_flower_ignore_type(flower):
     for ignore_type in module_config['ignore_types_flower']:
-        if ignore_type in flower.name.lower():
+        if ignore_type.lower() in ' '.join(flower.raw).lower():
             return True
 def is_vaporizer_ignore_type(thc_object):
     for ignore_type in module_config['ignore_types_vaporizers']:
@@ -466,12 +498,18 @@ def process_thc_deals(deals, dispensary):
         thc_object.dispensary=dispensary
         thc_object.producer = data[0]
         thc_object.name=data[1]
+        for key in module_config['strain_keywords']:
+            if  key.lower() in ' '.join(thc_object.raw).lower() and thc_object not in global_items_of_interest:
+                global_items_of_interest.append(thc_object)
+                print(f"Found interesting item: {' '.join(thc_object.raw)} at dispensary: {dispensary}")
         try:
             if data[2].lower() not in ['indica','sativa','hybrid', 'high cbd']:
                 data.insert(2,'n/a')
                 # print('hmm')
             thc_object.type = data[2]
         except:
+            traceback.print_exc()
+
             continue #skip if this is the case
         try:
             if "|" in data[3]:
@@ -479,6 +517,7 @@ def process_thc_deals(deals, dispensary):
             else:
                 thc_object.thc = data[3].strip().split("THC: ")[-1]
         except:
+            traceback.print_exc()
             pass
         # if '%'data[-1]:
 
@@ -504,9 +543,7 @@ def process_thc_deals(deals, dispensary):
                 traceback.print_exc()
                 pass
         thc_objects.append(thc_object)
-        for key in module_config['strain_keywords']:
-            if  key.lower() in thc_object.name.lower():
-                global_items_of_interest.append(thc_object)
+
     # thc_object.calculate_10mg_cost()
     return thc_objects
 
@@ -530,14 +567,20 @@ def find_specials(driver, dispensary):
     return process_special_deals(specials, dispensary)
     pass
 def load_products(driver):
-    time.sleep(2.5)
+    # time.sleep(5)
+    # driver.implicitly_wait(5)
+    wait = WebDriverWait(driver,10)
     # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    html = driver.find_element(By.CSS_SELECTOR, 'html[data-js-focus-visible=""]')
-
-    for i in range(0, 15):
-        html.send_keys(Keys.PAGE_DOWN)
-        time.sleep(1.5)
-    time.sleep(2.5)
+    # elements = driver.find_elements(By.CSS_SELECTOR, 'div[data-testid="product-list-item"]')
+    elements = []
+    for i in range(0,20):
+        # for element  in driver.find_element(By.CSS_SELECTOR, 'html[data-js-focus-visible=""]'):
+        driver.find_element(By.CSS_SELECTOR, 'html[data-js-focus-visible=""]').send_keys(Keys.PAGE_DOWN)
+        # html.send_keys(Keys.PAGE_DOWN)
+        # time.sleep(3)
+    wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'img[class="product-image__LazyLoad-sc-16rwjkk-0 busNCP desktop-product-list-item__Image-sc-8wto4u-2 ipJspp lazyloaded"]')))
+    # time.sleep(3)
+    # return elements
     return driver.find_elements(By.CSS_SELECTOR, 'div[data-testid="product-list-item"]')
     # return products
 
@@ -549,6 +592,7 @@ def find_deals(driver,dispensary, type=DealType.FLOWER):
     page =2
     product_url=driver.current_url
     while gt_100:
+        print(f"Loading page {page} for {type} deals at {dispensary}")
         driver.get(f"{product_url}?page={page}")
         _products=load_products(driver)
         products = _products+products
@@ -557,6 +601,8 @@ def find_deals(driver,dispensary, type=DealType.FLOWER):
             gt_100=False
         else:
             page+=1
+
+
     # driver.quit()
     return process_thc_deals(deals,dispensary)
     #     # print('\n'.join([str(x) for x in strains]))
@@ -597,8 +643,9 @@ def build_webdriver():
     WINDOW_SIZE = "1920,1080"
 
     chrome_options = Options()
-    chrome_options.headless=True
-    chrome_options.add_argument("--start-minimized")
+    # chrome_options.headless=True
+    # chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--start-minimized")
     chrome_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
     driver = webdriver.Chrome(executable_path='../chromedriver', chrome_options=chrome_options)
@@ -608,27 +655,35 @@ def build_webdriver():
     age_restriction_btn.click()
     return driver
 def load_dispensaries(driver):
-
-
+    wait = WebDriverWait(driver, 10)
     search_bar = driver.find_element(By.CSS_SELECTOR, 'input[data-testid="homeAddressInput"]')
     search_bar.send_keys(module_config['location'])
 
     # locations = driver.find_elements(By.CSS_SELECTOR, 'div[class="option__Container-sc-1e884xj-0 khOZsM"]')
     search_bar.click()
-    time.sleep(10)
-    location = driver.find_elements(By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')[0]
+    # class="dispensary-card__Image-sc-1wd9p5b-2 fKTDvr"
+    # time.sleep(10)
+    location = wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'li[data-testid="addressAutocompleteOption"]')))[0]
     location.click()
-    time.sleep(3)
-    soup = BeautifulSoup(driver.page_source)
+    time.sleep(2)
+    # soup = BeautifulSoup(driver.page_source)
     # results = soup.find_all("li", {"data-testid":"addressAutocompleteOption"})
     # results = soup.find("a", data-testid='listbox--1')
+    images = wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'img[class="dispensary-card__Image-sc-1wd9p5b-2 fKTDvr"]')))
+    for image in images:
+        print(image.get_attribute('src'))
     dispensary_links = driver.find_elements(By.CSS_SELECTOR, 'a[data-testid="dispensary-card"]')
     dispensaries = {}
-    for link in dispensary_links:
-        dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0]}
+    for i in range(0, len(dispensary_links)):# in dispensary_links:
+        link = dispensary_links[i]
+        dispensaries[link.text.split("\n")[0] if  link.text.split("\n")[0] != 'Closed' else link.text.split("\n")[1]]={"url":link.get_attribute('href'),"distance":link.text.split("\n")[-2].split(" Mile")[0], "image":images[i].get_attribute('src')}
         # dis = [x.get_attribute('href') for x in dispensaries]
     print(f"Found {len(dispensaries.keys())} dispenaries in {module_config['location']}")
     return dispensaries
+def update_run_history(runtime, dispensary_count):
+    with open(module_config['run_history_file'], "a+") as f:
+        f.write(f"{datetime.now().strftime('%m-%d-%Y %H:%M:%S')}: Scraped {dispensary_count} dispensaries ({module_config['location']}) in {runtime}\n")
+
 if __name__ == "__main__":
     # print(is_venv())
     # _input= read_csv('encodings_are_dumb.csv')
@@ -651,17 +706,19 @@ if __name__ == "__main__":
         # print(f"{dispo_str}\n")
         # driver.quit()
         dispensaries = load_dispensaries(driver)
+
         # dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
         # dispensaries={'Gage':{"url":'https://dutchie.com/dispensary/gage-cannabis-co-adrian'}}
         # dispensaries={'amazing-budz':{"url":'https://dutchie.com/dispensary/amazing-budz'}}
         # dispensaries={'heads-monroe':{"url":'https://dutchie.com/dispensary/heads-monroe'}}
         # for k, v in dispensaries.items():
         # dispos = [x for x in dispensaries.keys()]
-        processes = {}
+
         n=module_config['process_load_size']
         _dispensarys = [x for x in dispensaries.keys()]
         task_loads = [_dispensarys[i:i + n] for i in range(0, len(_dispensarys), n)]
         # for k,v in dispensaries.items():
+        processes = {}
         print(f"Processing {len(dispensaries.keys())} in {len(task_loads)} load(s)")
         for i in range(0,len(task_loads)):
             print(f"Blowing {i + 1}/{len(task_loads)} Loads")
@@ -695,5 +752,7 @@ if __name__ == "__main__":
 
     # cursor.close()
     # sp_connection.close()
+    update_run_history(f"{int((int(time.time()) - start_time) / 60)} minutes and {int((int(time.time()) - start_time) % 60)} seconds", len(dispensaries.keys()))
     print(f"\nCompleted in {int((int(time.time()) - start_time) / 60)} minutes and {int((int(time.time()) - start_time) % 60)} seconds")
+
 

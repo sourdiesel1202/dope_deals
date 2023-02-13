@@ -134,11 +134,14 @@ def process_list_concurrently(data, process_function, batch_size):
     :param batch_size: the number of records to process at a time
     :return: None
     '''
-    _keys = [x for x in data[1:]]
+    _keys = [x for x in data]
     n = batch_size
     loads = [_keys[i:i + n] for i in range(0, len(_keys), n)]
-    for load in loads:
-        load.insert(0, data[0])
+    # for load in loads:
+    #     load.insert(0, data[0])
+    # for load in loads:
+    #     print(f"Load size: {len(load)}")
+    # return
     processes = {}
     for load in loads:
         p = multiprocessing.Process(target=process_function, args=(load,))

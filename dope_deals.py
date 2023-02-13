@@ -569,7 +569,7 @@ def find_specials(driver, dispensary):
 def load_products(driver):
     # time.sleep(5)
     # driver.implicitly_wait(5)
-    wait = WebDriverWait(driver,10)
+    wait = WebDriverWait(driver,40)
     # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     # elements = driver.find_elements(By.CSS_SELECTOR, 'div[data-testid="product-list-item"]')
     elements = []
@@ -589,19 +589,24 @@ def find_deals(driver,dispensary, type=DealType.FLOWER):
     # ?page = 2
     deals = scrape_data(products)
     gt_100 = len(products)>99
-    page =2
-    product_url=driver.current_url
-    while gt_100:
-        print(f"Loading page {page} for {type} deals at {dispensary}")
-        driver.get(f"{product_url}?page={page}")
-        _products=load_products(driver)
-        products = _products+products
-        deals += scrape_data(_products)
-        if len(_products)<100:
-            gt_100=False
-        else:
-            page+=1
+    try:
+        pages  = WebDriverWait(driver, 20).until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[class="media-query__ContentDiv-sc-18mweoi-0 hrGTDA"]')))
+        del pages[0]
+        del pages[-1]
+        # page =2
+        product_url=driver.current_url
+        # while gt_100:
+        for i in range(2,max([int(x.text) for x in pages])+1):
+            page=i
+            print(f"Loading page {page} for {type} deals at {dispensary}")
+            driver.get(f"{product_url}?page={page}")
+            _products=load_products(driver)
+            products = _products+products
+            deals += scrape_data(_products)
 
+    except:
+        traceback.print_exc()
+        pass
 
     # driver.quit()
     return process_thc_deals(deals,dispensary)
@@ -706,9 +711,12 @@ if __name__ == "__main__":
         # print(f"{dispo_str}\n")
         # driver.quit()
         dispensaries = load_dispensaries(driver)
-
+        # dispensaries = {}
         # dispensaries={'3Fifteen':{"url":"https://dutchie.com/dispensary/3fifteen"}}
+        # dispensaries={'jade':{"url":"https://dutchie.com/dispensary/jade-collection"}}
         # dispensaries={'Gage':{"url":'https://dutchie.com/dispensary/gage-cannabis-co-adrian'}}
+        # dispensaries={'Gage':{"url":'https://dutchie.com/dispensary/gage-cannabis-co-adrian'}}
+        # dispensaries={'Rush':{"url":'https://dutchie.com/dispensary/rush-cannabis'}}
         # dispensaries={'amazing-budz':{"url":'https://dutchie.com/dispensary/amazing-budz'}}
         # dispensaries={'heads-monroe':{"url":'https://dutchie.com/dispensary/heads-monroe'}}
         # for k, v in dispensaries.items():

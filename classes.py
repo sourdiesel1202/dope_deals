@@ -115,7 +115,7 @@ class Leafly(StrainWebSource):
         #no parent care
         # try:
         #
-        wait = WebDriverWait(self.driver, 30)
+        wait = WebDriverWait(self.driver, 3)
         #     if len(wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[class="jsx-1e374a6fd2e6bf7b lineage__strain--no-parents text-center flex flex-col items-center"]')))) > 0:
         #         data['parents']=[]
         #
@@ -192,6 +192,11 @@ class Leafly(StrainWebSource):
             #     data['parents']=[]
     def load_strains(self, pages=None):
         json_data = {}
+        urls = []
+        with open('extracts/strain_data.json', 'r') as f:
+            for item in json.loads(f.read()).values():
+                urls.append(item['url'])
+        print(f"Preloaded data for {len(urls)} strain(s)")
         for page_number in pages:
             wait = WebDriverWait(self.driver, 50)
             print(f"Processing {pages.index(page_number)+1}/{len(pages)} strain pages")
@@ -206,6 +211,9 @@ class Leafly(StrainWebSource):
 
             strain_links = [x.get_attribute("href") for x in wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'a[data-testid="strain-card"]')))]
             for strain_link in strain_links:
+                if strain_link in urls:
+                    print(f"Found existing data loaded for {strain_link}")
+                    continue
                 print(f"Processing strain {strain_links.index(strain_link)+1}/{len(strain_links)} {strain_link} on page {pages.index(page_number)+1}/{len(pages)}")
                 try:
                     data= self.load_strain_details(strain_link)
@@ -218,6 +226,7 @@ class Leafly(StrainWebSource):
                     f.write(json.dumps(json_data))
                 self.driver.get(f"{self.connection.host}?page={page_number}")
                 print(f"Loading strains on page {self.connection.host}?page={page_number}")
+                wait = WebDriverWait(self.driver, 50)
         # process_list_concurrently(total_pages,self.load_leafly_strain_pages, 30)
         #so basically the idea here is that we will load our strains in a multi processed fashion here
         #first get list of pages
@@ -241,7 +250,7 @@ class Leafly(StrainWebSource):
         #aliases
 
         self.driver.get(strain_url)
-        wait  = WebDriverWait(self.driver,30)
+        wait  = WebDriverWait(self.driver,15)
         for i in range(0, 10):
             # for element  in driver.find_element(By.CSS_SELECTOR, 'html[data-js-focus-visible=""]'):
             self.driver.find_element(By.CSS_SELECTOR,
@@ -254,6 +263,7 @@ class Leafly(StrainWebSource):
         data['description'] = wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'div[itemprop="description"]'))).text
         data['image'] = wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'img[data-testid="image-picture-image"]')))[0].get_attribute('srcset').split(",")[0]
         lineage =self.load_lineage()
+        wait = WebDriverWait(self.driver, 15)
         data['parents']=lineage['parents']
         data['children']=lineage['children']
         try:

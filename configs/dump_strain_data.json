@@ -1,3 +1,4 @@
 {
-  "url": "https://www.leafly.com/strains"
+  "url": "https://www.leafly.com/strains",
+  "output_file": "extracts/strain_data.json"
 }

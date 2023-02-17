@@ -16,29 +16,37 @@ def load_strain_data(pages):
     driver = Leafly(Connection(module_config['url']))
     driver.build_webdriver()
     driver.load_strains(pages)
+# def load_strain_urls():
 def combine_outputs():
     bigass_json={}
-    os.chdir('extracts')
+    # os.chdir('extracts')
+    strain_data= {}
+    if os.path.exists(f"{module_config['output_file']}"):
+        with open(f"{module_config['output_file']}", "r") as f:
+            strain_data=json.loads(f.read())
 
-    for file in os.listdir():
-        with open(file, 'r') as f:
+    for file in os.listdir("extracts"):
+        print(f"{os.getpid()}:{datetime.now()}: Reading file: {file}")
+        with open(f"extracts/{file}", 'r') as f:
+
             data = json.loads(f.read())
             for k,v in data.items():
-                bigass_json[k]=v
+                if k not in strain_data:
+                    strain_data[k]=v
+                    print(f"Adding new strain to data: {k}")
 
         # os.remove(file)
 
-    with open("strain_data.json", 'w') as f:
-        f.write(json.dumps(bigass_json))
+    with open(module_config['output_file'], 'w') as f:
+        f.write(json.dumps(strain_data))
 if __name__ == "__main__":
     # initialize()
     start_time = time.time()
+    combine_outputs()
     driver = Leafly(Connection(module_config['url']))
-
     driver.build_webdriver()
     pages = driver.load_pages()
-    process_list_concurrently(pages,load_strain_data,30)
-    combine_outputs()
+    process_list_concurrently(pages,load_strain_data,35)
     # driver.build_webdriver()
     # driver.load_strains()
     print()
@@ -64,7 +72,7 @@ if __name__ == "__main__":
     except:
         traceback.print_exc()
     #
-    write_csv(f"extracts/output_{file_suffix}.csv", result)
+    # write_csv(f"extracts/output_{file_suffix}.csv", result)
 
     # connection.close()
 

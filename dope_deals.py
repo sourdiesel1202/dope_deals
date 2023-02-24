@@ -30,6 +30,7 @@ module_config = load_module_config(__file__.split("/")[-1].split(".py")[0])
 #             (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix))
 file_suffix = f"{datetime.now().strftime('%m-%d-%Y')}"
 global_items_of_interest=[]
+from selenium.common.exceptions import TimeoutException
 # "strain_keywords": ["haze", "skywalker", "sky walker", "afghan","pakistan", "hindu", "maui","afgoo" ,"hindi","diesel","crack", "cheese","dixie","khalifa", "syrup" ]
 class Workbook:
     def __init__(self, name):
@@ -234,12 +235,15 @@ def combine_outputs(pids, type):
         print(f"Processing {type}{pids[i]}.csv")
         if i==0:
             #base case
-            rows=read_csv(f"{type}{pids[i]}.csv")
+            if f"{type}{pids[i]}.csv" in os.listdir():
+                rows=read_csv(f"{type}{pids[i]}.csv")
         else:
             print(f"reading from temp file {type}{pids[i]}.csv")
-            tmp_rows = read_csv(f"{type}{pids[i]}.csv")
-            for i in range(1, len(tmp_rows)):
-                rows.append(tmp_rows[i])
+            if f"{type}{pids[i]}.csv" in os.listdir():
+                tmp_rows = read_csv(f"{type}{pids[i]}.csv")
+                for i in range(1, len(tmp_rows)):
+                    rows.append(tmp_rows[i])
+
 
     print(f"writing extraction file to {type}.csv")
     write_csv(f'{type}.csv',rows)
@@ -569,7 +573,7 @@ def find_specials(driver, dispensary):
 def load_products(driver):
     # time.sleep(5)
     # driver.implicitly_wait(5)
-    wait = WebDriverWait(driver,40)
+    wait = WebDriverWait(driver,180)
     # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     # elements = driver.find_elements(By.CSS_SELECTOR, 'div[data-testid="product-list-item"]')
     elements = []
@@ -577,19 +581,25 @@ def load_products(driver):
         # for element  in driver.find_element(By.CSS_SELECTOR, 'html[data-js-focus-visible=""]'):
         driver.find_element(By.CSS_SELECTOR, 'html[data-js-focus-visible=""]').send_keys(Keys.PAGE_DOWN)
         # html.send_keys(Keys.PAGE_DOWN)
-        # time.sleep(3)
-    wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'img[class="product-image__LazyLoad-sc-16rwjkk-0 busNCP desktop-product-list-item__Image-sc-8wto4u-2 ipJspp lazyloaded"]')))
+        # time.sleep(2)
+    try:
+        images = wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'img[class="product-image__LazyLoad-sc-16rwjkk-0 busNCP desktop-product-list-item__Image-sc-8wto4u-2 ipJspp lazyloaded"]')))
+    except TimeoutException:
+        images = wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'img[class="product-image__LazyLoad-sc-16rwjkk-0 busNCP desktop-product-list-item__Image-sc-8wto4u-2 ipJspp lazyloaded"]')))
+        # images = wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'img[class="product-image__LazyLoad-sc-16rwjkk-0 busNCP desktop-product-list-item__Image-sc-8wto4u-2 ipJspp lazyloaded"]')))
+    print(f"Found {len(images)} product images on this page")
     # time.sleep(3)
     # return elements
     return driver.find_elements(By.CSS_SELECTOR, 'div[data-testid="product-list-item"]')
     # return products
 
 def find_deals(driver,dispensary, type=DealType.FLOWER):
-    products =load_products(driver)
-    # ?page = 2
-    deals = scrape_data(products)
-    gt_100 = len(products)>99
+    deals = []
     try:
+        products = load_products(driver)
+        # ?page = 2
+        deals = scrape_data(products)
+        gt_100 = len(products) > 99
         pages  = WebDriverWait(driver, 20).until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[class="media-query__ContentDiv-sc-18mweoi-0 hrGTDA"]')))
         del pages[0]
         del pages[-1]
@@ -606,6 +616,7 @@ def find_deals(driver,dispensary, type=DealType.FLOWER):
 
     except:
         traceback.print_exc()
+        print(f"Could not load products for {dispensary}")
         pass
 
     # driver.quit()
@@ -749,7 +760,8 @@ if __name__ == "__main__":
         for type in module_config['types']:
             combine_outputs([x for x in processes.keys()],type)
             for pid in processes.keys():
-                os.remove(f"{type}{pid}.csv")
+                if f"{type}{pid}.csv" in os.listdir():
+                    os.remove(f"{type}{pid}.csv")
         driver.quit()
 
         global_workbook.write_workbook()

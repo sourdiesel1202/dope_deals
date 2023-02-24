@@ -1,0 +1,383 @@
+{
+  "Myrcene": {
+    "aromas": [
+      "Hops",
+      "Mango",
+      "Lemongrass",
+      "Fruity",
+      "Earthy",
+      "Clove",
+      "Sweet Basil",
+      "Basil",
+      "Grassy",
+      "Sweet",
+      "Musty",
+      "Grape"
+    ],
+    "effects": [
+      "Sleep Aid",
+      "Muscle Relaxant",
+      "Relaxing",
+      "Euphoric",
+      "Analgesic",
+      "Anti-Psychotic",
+      "Anti-Carcinogenic",
+      "Anti-Pasmodic",
+      "Hypnotic",
+      "Sedative",
+      "Neuroprotective"
+    ]
+  },
+  "Caryophyllene": {
+    "aromas": [
+      "Black Pepper",
+      "Basil",
+      "Copaiba",
+      "Black Caraway",
+      "Oregano",
+      "Lavender",
+      "Allspice",
+      "Fig",
+      "Roman Chamomile",
+      "Clove",
+      "Hops",
+      "Cinnamon",
+      "Ylang-ylang",
+      "Rosemary",
+      "Woody",
+      "Spicy",
+      "Peppery",
+      "Sweet",
+      "Potpourri"
+    ],
+    "effects": [
+      "Anti-Inflammatory",
+      "Digestive Aid",
+      "Analgesic",
+      "Anti-Septic",
+      "Anti-Depressant",
+      "Mood Elevator",
+      "Stress Relief",
+      "Neuroprotective",
+      "Immunomodulator",
+      "Euphoric",
+      "Cozy",
+      "Happy",
+      "Anti-Anxiety",
+      "Anti-Nausea",
+      "Anti-Itch",
+      "Muscle Relaxant",
+      "Anxiolytic"
+    ]
+  },
+  "Limonene": {
+    "aromas": [
+      "Citrus Fruits",
+      "Piny",
+      "Rosemary",
+      "Mint",
+      "Fennel",
+      "Juniper",
+      "Citrusy",
+      "Lemon",
+      "Grapefruit",
+      "Orange",
+      "Lime",
+      "Sweet",
+      "Tangy"
+    ],
+    "Effects": [
+      "Anti-Depressant",
+      "Anti-Anxiety",
+      "Uplifting",
+      "Mood Elevator",
+      "Stress Relief",
+      "Digestive Aid",
+      "Mood Elevator",
+      "Antioxidant",
+      "Anti-Bacterial",
+      "Acid Reflux Relief",
+      "Appetite Suppressant"
+    ]
+  },
+  "Linalool": {
+    "aromas": [
+      "Lavender",
+      "Laurel",
+      "Cinnamon",
+      "Rosewood",
+      "Mint",
+      "Birch Trees",
+      "Citrus Fruits",
+      "Soap",
+      "Floral"
+    ],
+    "effects": [
+      "Analgesic",
+      "Anti-Convulsant",
+      "Anti-Epileptic",
+      "Anti-Psychotic",
+      "Anti-Anxiety",
+      "Anti-Depressant",
+      "Anxiolitic",
+      "Sedative",
+      "Relaxing",
+      "Calming",
+      "Muscle Relaxant",
+      "Stress Relief",
+      "Mood Elevator",
+      "Neuroprotective",
+      "Antioxidant"
+    ]
+  },
+  "Pinene": {
+    "aromas": [
+      "Pine",
+      "Conifer Trees",
+      "Pine Trees",
+      "Rosemary",
+      "Orange Peels",
+      "Sharp",
+      "Sweet",
+      "Fresh",
+      "Piny",
+      "Fresh",
+      "Earthy",
+      "Spicy",
+      "Cedar",
+      "Conifer Trees",
+      "Dill",
+      "Eucalyptus",
+      "Oranges",
+      "Parsley",
+      "Rosemary",
+      "Basil",
+      "Woody",
+      "Sharp",
+      "Bright"
+    ],
+    "effects": [
+      "Memory Aid",
+      "Anti-Inflammatory",
+      "Anti-Bacterial",
+      "Anti-Anxiety",
+      "Bronchial Dilator",
+      "Memory Retention",
+      "Stress Relief",
+      "Energizing",
+      "Antioxidant",
+      "Focus",
+      "Cerebral",
+      "Heightened Awareness",
+      "Increase Muscle Mobility",
+      "Euphoric"
+    ]
+  },
+  "Humulene": {
+    "aromas": [
+      "Earthy",
+      "Woody",
+      "Spicy",
+      "Hops",
+      "Basil",
+      "Clove",
+      "Black Pepper",
+      "Sage",
+      "Ginseng"
+    ],
+    "effects": [
+      "Anti-Inflammatory",
+      "Appetite Suppressant",
+      "Analgesic",
+      "Anti-Tumor",
+      "Sedative"
+    ]
+  },
+  "Terpinolene": {
+    "aromas": [
+      "Smoky",
+      "Woody",
+      "Herbal",
+      "Lilac",
+      "Tea Tree",
+      "Nutmeg",
+      "Pine Trees",
+      "Apples",
+      "Cumin",
+      "Pinesol",
+      "Diesel"
+    ],
+    "effects": [
+      "Anti-Fungal",
+      "Antioxidant",
+      "Anti-Fungal",
+      "Anti-Proliferative"
+    ]
+  },
+  "Bisabolol": {
+    "aromas": [
+      "Fruity",
+      "Nutty",
+      "Peppery",
+      "Herbal",
+      "Honey",
+      "Apple",
+      "Chamomile",
+      "Sage",
+      "Candeia Tree"
+    ],
+    "effects": [
+      "Calming",
+      "Anti-Inflammatory",
+      "Antioxidant",
+      "Anti-Cancer",
+      "Anti-Tumor",
+      "Anti-Anxiety",
+      "Anti-Depressant",
+      "Analgesic",
+      "Anti-Insomnia"
+    ]
+  },
+  "Eucalyptol": {
+    "aromas": [
+      "Eucalyptus",
+      "Bay Leaves",
+      "Tea Tree",
+      "Rosemary",
+      "Basil",
+      "Turmeric",
+      "Sage",
+      "Ginger",
+      "Cardamom",
+      "Menthol",
+      "Mint"
+    ],
+    "effects": [
+      "Insect Repellent",
+      "Anti-Fungal",
+      "Anti-Bacterial",
+      "Reduce Blood Pressure",
+      "Asthma Treating",
+      "Memory Improvement",
+      "Cooling",
+      "Increase Circulation",
+      "Bronchial Dilator",
+      "Balance",
+      "Refresh"
+    ]
+  },
+  "Geraniol": {
+    "aromas": [
+      "Sweet",
+      "Rose",
+      "Citrus",
+      "Rose",
+      "Palmarosa",
+      "Citronella",
+      "Geranium",
+      "Lemon",
+      "Blueberry",
+      "Carrot",
+      "Orange",
+      "Lemongrass"
+    ],
+    "effects": [
+      "Anti-Viral",
+      "Antioxidant",
+      "Neurprotecive",
+      "Insect Repellent",
+      "Anti-Bacterial",
+      "Anti-Cancer",
+      "Anti-Tumor",
+      "Anti-Depressant",
+      "Anti-Anxiety",
+      "Anti-Insomnia"
+    ]
+  },
+  "Terpineol": {
+    "aromas": [
+      "Lilac",
+      "Sage",
+      "Pine Trees",
+      "Lime",
+      "Eucalyptus",
+      "Piny",
+      "Crabapple",
+      "Yellow Root",
+      "Chamomile",
+      "St. John’s Wort",
+      "Mugwort",
+      "Basil",
+      "Oregano",
+      "Geranium",
+      "Parsley",
+      "Mother’s Skin",
+      "Laurel",
+      "Cloves",
+      "Anise",
+      "Thyme",
+      "Ginger"
+    ],
+    "effects": [
+      "Anti-Cancer",
+      "Anti-Tumor",
+      "Sedative",
+      "Anti-Anxiety",
+      "Antioxidant",
+      "Analgesic",
+      "Anti-Carcinogenic"
+    ]
+  },
+  "Farnesene": {
+    "aromas": [
+      "Ginger",
+      "Apple",
+      "Sandalwood",
+      "Ginger",
+      "Oranges",
+      "Grapefruit",
+      "Hops",
+      "Turmeric",
+      "Cedarwood",
+      "Patchouli",
+      "Chamomile",
+      "Fruity",
+      "Sweet"
+    ],
+    "effects": [
+      "Anti-Fungal",
+      "Anti-Bacterial",
+      "Anti-Inflammatory",
+      "Muscle Relaxant",
+      "Anti-Anxiety",
+      "Sedative"
+    ]
+  },
+  "Borneol": {
+    "aromas": [
+      "Ginger",
+      "Camphor",
+      "Thyme",
+      "Rosemary",
+      "Mint",
+      "Woody",
+      "Menthol",
+      "Lavender",
+      "Woody",
+      "Balsam"
+    ],
+    "effects": [
+      "Relaxing",
+      "Calming",
+      "Insect Repellent",
+      "Anti-Cancer",
+      "Anti-Tumor",
+      "Analgesic",
+      "Anti-Inflammatory",
+      "Anti-Stress",
+      "Anti-Fatigue",
+      "Neuroprotective"
+    ]
+  },
+  ""
+}

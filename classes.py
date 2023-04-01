@@ -1,5 +1,6 @@
 import json
 import os
+import string
 import traceback
 import json
 import traceback
@@ -222,7 +223,7 @@ class Leafly(StrainWebSource):
                     traceback.print_exc()
                     print(f"Could not load data for {strain_link}")
                 # print(strain_link.get_attribute("href"))
-                with open(f"extracts/{os.getpid()}.json", "w") as f:
+                with open(f"extracts/strain_{os.getpid()}.json", "w") as f:
                     f.write(json.dumps(json_data))
                 self.driver.get(f"{self.connection.host}?page={page_number}")
                 print(f"Loading strains on page {self.connection.host}?page={page_number}")
@@ -295,3 +296,139 @@ class Leafly(StrainWebSource):
         # self.driver.get(self.connection.host)
 
         return data
+
+class AllBud(StrainWebSource):
+    def build_webdriver(self):
+        #ok so here we build the webdriver to do some shit? idk man
+        CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+        CHROMEDRIVER_PATH = '../chromedriver'
+        WINDOW_SIZE = "1920,1080"
+        print()
+        chrome_options = Options()
+        chrome_options.headless = True
+        chrome_options.add_argument("--start-minimized")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.binary_location = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+
+        self.driver = webdriver.Chrome(executable_path='../chromedriver', chrome_options=chrome_options)
+        self.driver.set_window_size(1920, 1080)
+        # driver = webdriver.Chrome('../chromedriver')
+        self.driver.get(self.connection.host)
+        wait  = WebDriverWait(self.driver,30)
+        #no age restriction for allbud lol
+        # age_restriction_btn = wait.until(ec.element_to_be_clickable((By.CSS_SELECTOR, 'button[data-testid="age-gate-yes-button"]')))
+        # age_restriction_btn.click()
+
+    def load_pages(self):
+        # self.build_webdriver()
+        # wait = WebDriverWait(self.driver, 30)
+        # pages = wai/t.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'div[data-testid="page"]')))
+        # print(f"{pages.text}")
+        return list(string.ascii_uppercase)
+
+    def load_strains(self, pages=None):
+        json_data = {}
+        _strains = []
+        with open('extracts/strain_data.json', 'r') as f:
+            for item in json.loads(f.read()).keys():
+                # print(item)
+                # urls.append(item['url'])/
+                _strains.append(item)
+        print(f"Preloaded data for {len(_strains)} strain(s)")
+        for page_letter in pages:
+            wait = WebDriverWait(self.driver, 50)
+            print(f"Processing {pages.index(page_letter)+1}/{len(pages)} strain pages")
+            #ok so first load the page
+            self.driver.get(f"{self.connection.host}&letter={page_letter}&results=5000")
+            print(f"Loading strains on page {self.connection.host}&page={page_letter}&results=5000")
+            wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'li[class="pull-left hidden-xs"]')))
+            strains = wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'article[class="infocard strain"]')))
+            new_strains = {}
+            for strain_card in strains:
+                link = strain_card.find_element(By.CSS_SELECTOR,'section[class="object-title"]').find_element(By.CSS_SELECTOR,'a').get_attribute('href')
+                name = strain_card.find_element(By.CSS_SELECTOR,'section[class="object-title"]').find_element(By.CSS_SELECTOR,'a').find_element(By.CSS_SELECTOR,'h3[class="visible-lg"]').text
+                img = strain_card.find_element(By.CSS_SELECTOR,'header').find_element(By.CSS_SELECTOR,'img').get_attribute('data-src').strip()
+                if name not in _strains:
+                    print(f"Found new strain: {name}")
+                    new_strains[name]={"url":link, "img":img, "name":name}
+                # link = strain_card
+                # print(link)
+                # print(img)
+
+            print(f"Found {len(new_strains)} new strains on page {page_letter}")
+            parsed_strains = {}
+            for tmp_strain_data  in new_strains.values():
+                
+                #load the strain data itself now
+                try:
+                    self.driver.get(tmp_strain_data['url'])
+                    type = wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'h4[class="variety"]'))).find_element(By.CSS_SELECTOR,'a').text
+                    description = wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'div[id="strain-info"]'))).find_elements(By.CSS_SELECTOR,'span')[-1].text
+                    effects = [x.text for x in wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'section[id="positive-effects"]'))).find_element(By.CSS_SELECTOR,'div[class="panel-body well tags-list"').find_elements(By.CSS_SELECTOR, 'a')]
+                    relieves = [x.text for x in wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'section[id="relieved"]'))).find_element(By.CSS_SELECTOR,'div[class="panel-body well tags-list"').find_elements(By.CSS_SELECTOR, 'a')]
+                    aromas = [x.text for x in wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'section[id="aromas"]'))).find_element(By.CSS_SELECTOR,'div[class="panel-body well tags-list"').find_elements(By.CSS_SELECTOR, 'a')]
+                    flavors = [x.text for x in wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'section[id="flavors"]'))).find_element(By.CSS_SELECTOR,'div[class="panel-body well tags-list"').find_elements(By.CSS_SELECTOR, 'a')]
+                    print(f"{type}: {relieves} {aromas} {flavors} {effects}")
+                    new_strains[tmp_strain_data['name']]['description']=description
+                    new_strains[tmp_strain_data['name']]['effects']=effects
+                    new_strains[tmp_strain_data['name']]['aromas']=aromas
+                    new_strains[tmp_strain_data['name']]['flavors']=flavors
+                    new_strains[tmp_strain_data['name']]['relieves']=flavors
+                    new_strains[tmp_strain_data['name']]['type']=type
+                    new_strains[tmp_strain_data['name']]['children']=[]
+                    new_strains[tmp_strain_data['name']]['parents']=[]
+                    new_strains[tmp_strain_data['name']]['aliases']=[]
+                    new_strains[tmp_strain_data['name']]['terpenes']=[]
+                    parsed_strains[tmp_strain_data['name']]=new_strains[tmp_strain_data['name']]
+                    with open(f"extracts/strain_{os.getpid()}.json", "w") as f:
+                        f.write(json.dumps(parsed_strains))
+                    time.sleep(5) #try to be human?
+                except:
+                    traceback.print_exc()
+                    print(f"Could not load data for {tmp_strain_data['name']}")
+
+            # once we are here we can pretty much just write the json and move on
+            #disregard below
+            #presusmably now, we have a page full of strains to parse and load the data for
+
+            # #ok so THIS is where shit is going to get fuuuuuuucky
+            # #these are endless scroll, so basially do a while the more results button is visible
+            # while len(self.driver.find_elements(By.CSS_SELECTOR, 'a[class="endless_more"]')) > 0:
+            #     self.driver.find_element(By.CSS_SELECTOR, 'a[class="endless_more"]').click()
+            #     try:
+            #         wait.until(ec.presence_of_element_located((By.CSS_SELECTOR, 'a[class="endless_more"]')))
+            #     except TimeoutException as e:
+            #         print(f"Reached the bottom?")
+            #         break
+        #     for i in range(0, 10):
+        #         # for element  in driver.find_element(By.CSS_SELECTOR, 'html[data-js-focus-visible=""]'):
+        #         self.driver.find_element(By.CSS_SELECTOR, 'body[class="transition-[padding-top] motion-reduce:transition-none"]').send_keys(Keys.PAGE_DOWN)
+        #
+        #     strain_links = [x.get_attribute("href") for x in wait.until(ec.presence_of_all_elements_located((By.CSS_SELECTOR, 'a[data-testid="strain-card"]')))]
+        #     for strain_link in strain_links:
+        #         if strain_link in urls:
+        #             print(f"Found existing data loaded for {strain_link}")
+        #             continue
+        #         print(f"Processing strain {strain_links.index(strain_link)+1}/{len(strain_links)} {strain_link} on page {pages.index(page_number)+1}/{len(pages)}")
+        #         try:
+        #             data= self.load_strain_details(strain_link)
+        #             json_data[data['name']]=data
+        #         except:
+        #             traceback.print_exc()
+        #             print(f"Could not load data for {strain_link}")
+        #         # print(strain_link.get_attribute("href"))
+        #         with open(f"extracts/{os.getpid()}.json", "w") as f:
+        #             f.write(json.dumps(json_data))
+        #         self.driver.get(f"{self.connection.host}?page={page_number}")
+        #         print(f"Loading strains on page {self.connection.host}?page={page_number}")
+        #         wait = WebDriverWait(self.driver, 50)
+        # # process_list_concurrently(total_pages,self.load_leafly_strain_pages, 30)
+        # #so basically the idea here is that we will load our strains in a multi processed fashion here
+        # #first get list of pages
+
+        pass
+    # def load_leafly_strain_pages(self, pages):
+    #     print(f"{os.getpid()}: Processing pages {','.join(pages)}")
+        # for page_number in pages:
+        #     pass
+        pass

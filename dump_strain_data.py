@@ -10,10 +10,11 @@ from bs4 import BeautifulSoup
 logging = False
 creds = None
 module_config = load_module_config(__file__.split("/")[-1].split(".py")[0])
-from classes import Leafly,Connection
+from classes import Leafly,Connection, AllBud
 from functions import process_list_concurrently
 def load_strain_data(pages):
-    driver = Leafly(Connection(module_config['url']))
+    # driver = Leafly(Connection(module_config['url']))
+    driver = AllBud(Connection(module_config['url']))
     driver.build_webdriver()
     driver.load_strains(pages)
 # def load_strain_urls():
@@ -27,26 +28,35 @@ def combine_outputs():
 
     for file in os.listdir("extracts"):
         print(f"{os.getpid()}:{datetime.now()}: Reading file: {file}")
-        with open(f"extracts/{file}", 'r') as f:
+        if "strain_" not in file:
+            continue
+        else:
+            with open(f"extracts/{file}", 'r') as f:
 
-            data = json.loads(f.read())
-            for k,v in data.items():
-                if k not in strain_data:
-                    strain_data[k]=v
-                    print(f"Adding new strain to data: {k}")
+                data = json.loads(f.read())
+                for k,v in data.items():
+                    if k not in strain_data:
+                        strain_data[k]=v
+                        print(f"Adding new strain to data: {k}")
 
-        # os.remove(file)
+            os.remove(f"extracts/{file}")
 
     with open(module_config['output_file'], 'w') as f:
         f.write(json.dumps(strain_data))
 if __name__ == "__main__":
     # initialize()
+    # "url": "https://www.leafly.com/strains",
     start_time = time.time()
     combine_outputs()
-    driver = Leafly(Connection(module_config['url']))
-    driver.build_webdriver()
-    pages = driver.load_pages()
-    process_list_concurrently(pages,load_strain_data,35)
+    #so in theory... this should just work?
+    # workdriver = Leafly(Connection(module_config['url']))
+    # driver.build_webdriver()
+    pages = ["F"]
+    driver = AllBud(Connection(module_config['url']))
+    # pages = driver.load_pages()
+
+    process_list_concurrently(pages,load_strain_data,5)
+    combine_outputs()
     # driver.build_webdriver()
     # driver.load_strains()
     print()

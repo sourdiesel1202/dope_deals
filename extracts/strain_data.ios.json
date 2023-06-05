@@ -1,0 +1,1805 @@
+[
+  {
+    "url": "https://www.leafly.com/strains/el-jeffe",
+    "name": "El Jefe",
+    "description": "El Jefe, also known as \"Jefe OG,\" is a potent indica marijuana strain made by crossing Abusive OG and Rare Dankness #1. This strain delivers a powerful and relaxing high that you can feel throughout your mind and body. El Jefe offers an earthy, lemon aroma with undertones of spice. Medical marijuana patients choose El Jefe to help relieve symptoms assocated with insomnia.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-37.png?auto=compress",
+    "parents": [
+      "Abusive OG",
+      "Rare Dankness #1"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [
+      "Jefe OG"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/y-griega",
+    "name": "Y Griega",
+    "description": "Also known as simply \"Y,\" the 80% sativa Y Griega is an energizing strain with a sweet floral, citrus aroma. Unusual for a sativa variety, Y Griega produces large, resin-coated buds on tall stalks. This sativa cross between Amnesia Haze and Kali Mist delivers an energetic cerebral buzz followed by a long-lasting calm that soothes both mind and body. Y Griega's high THC content makes it suitable for a variety of conditions including pain, inflammation, glaucoma, fatigue, and appetite loss. Growers won't be disappointed with Y Griega's yields, but its 85 to 95-day flowering time requires some devotion and patience.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-15.png?auto=compress",
+    "parents": [
+      "Kali Mist",
+      "Amnesia Haze"
+    ],
+    "children": [],
+    "type": "Sativa",
+    "aliases": [
+      "I Griega"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Terpinolene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/pav",
+    "name": "Pavé",
+    "description": "Pavé is a marijuana strain from Compound Genetics. It's a blingy, minty, gassy cross of Paris OG and The Menthol. The award-winning breeder currently sells Pavé seeds in new crosses Candy Pavé (Eye Candy x Pavé), and the strawberry-scented Strawberry Pave (Red Pop x Pavé). Pavé with the accento refers to jewelry so iced out you can't see the metal setting. The strain screams 2022 in exotics—a white-out trichome blizzard burying a stacked, thick bud. Pavé also dumps hash. This crazy-high-THC hybrid adds some blinding, heady bling to any situation. Grab some sunglasses.",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-1.png?auto=compress",
+    "parents": [
+      "The Menthol",
+      "Paris OG"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/faygo-red-pop",
+    "name": "Red Pop",
+    "description": "Produced by 710 Savant, Red Pop (also known as Faygo Red Pop) is an indica strain that took 1st place as live resin in the 2015 High Times Michigan Cannabis Cup. This Afghani cross was named after a well-known Michigan soda and blooms with large rosy calyxes.",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-1.png?auto=compress",
+    "parents": [
+      "Afghani"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [
+      "Faygo Red Pop"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/z-cube",
+    "name": "Z Cube",
+    "description": "Z Cube is a hybrid weed strain crossing Zkittlez and a type of OG Kush. Zkittlez and OG crosses bred from stock by Dying Breed Seeds have deep, sweet, fruit, syrup smells and corner store candy-aisle rainbow flavors that stain the palate and perfume a room. For effects, Z Cube is strong yet versatile daytime or night, making almost anything you pair it with better. \"Gleaming the Cube\" on Z Cube? Why not. Award-winning Zkittlez and OG terps can't stop shining.",
+    "image": "https://leafly-public.imgix.net/strains/photos/kvMVDRd2RU6RQvHmcjYx_BTY%20Z%20Cubed%20(David%20Downs:Leafly).jpg?auto=compress",
+    "parents": [
+      "OG Kush",
+      "Zkittlez"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "ZCube"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Humulene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/presidential-og",
+    "name": "Presidential OG",
+    "description": "Presidential OG, also known as \"Presidential Kush,\" and \"Presidential OG Kush,\" is an indica-dominant hybrid marijuana strain from Royal Queen Seeds. Presidential OG is made from a cross of Bubble Gum and OG Kush that will definitely get your attention with its intense citrus and pine smell. As far as taste, it maintains the pine flavor and heads into a more earthy terrain. This strain hits hard and fast with sedative effects that make this a popular choice for those dealing with insomnia or stress. Presidential OG is 90% indica and 10% sativa.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-31.png?auto=compress",
+    "parents": [
+      "Bubble Gum",
+      "OG Kush"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [
+      "Presidential Kush",
+      "Presidential OG Kush"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Myrcene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/ogkz",
+    "name": "OGKZ",
+    "description": "From Humboldt Seed Organization, OGKZ crosses a 3rd generation Zkittlez from Family Seeds with OGKB (OG Kush Breath). Dense purple buds come loaded with tasty trichomes and orange pistils. OGKZ is a great choice for extraction, making for tasty dabs. If you're a fan of the tasty Zkittlez, try out this great cross.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-1.png?auto=compress",
+    "parents": [
+      "OGKB",
+      "Zkittlez"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/platinum-purple-kush",
+    "name": "Platinum Purple Kush",
+    "description": "Platinum Purple Kush, also known as \"Platinum Purple\" and \"Purple Platinum,\" is an indica marijuana strain made from a cross of Purple Kush. Platinum Purple Kush is known for providing relaxing and euphoric effects that allow you to retain focus. This strain features a strong, grape aroma that is musky and unique. Consumers love Platinum Purple Kush because the euphoria starts off feeling like a sativa, but ends on a sedating indica note. This strain is ideal for evening use. Medical marijuana patients choose Platinum Purple Kush to help relieve symptoms assocated with insomnia and chronic pain.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-11.png?auto=compress",
+    "parents": [
+      "Purple Kush"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [
+      "Platinum Purple",
+      "Purple Platinum"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Myrcene",
+      "Humulene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/dark-star",
+    "name": "Dark Star",
+    "description": "Dark Star, also known as \"Darkstar,\" is an indica marijuana strain. Dark Star's effects are as spacey as its name suggests: a deep, relaxed sensation throughout the body accompanied by a heavy cerebral calm. Though celestial in its effects, the strain is more likely homage to the Grateful Dead's song \"Dark Star.\" A cross between Purple Kush and Mazar-I-Sharif, this dark, almost bluish strain was first bred indoors by T.H. Seeds, and comes as a challenge to many growers with its slow, 10-week flowering period. Its sour-smelling buds are dense and compact, ornamented with crystals and copper hairs.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-22.png?auto=compress",
+    "parents": [
+      "Mazar I Sharif",
+      "Purple Kush"
+    ],
+    "children": [
+      "Darkside OG"
+    ],
+    "type": "Indica",
+    "aliases": [
+      "Darkstar"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/smarties",
+    "name": "Smarties",
+    "description": "A collaboration between Connected Cannabis Co. and Cookies Fam, Smarties is a cross of GSC and Blue City Diesel. Much like the candy, Smarties offers a delicious terpene profile that's sweet, fruity, and tart. Consumers can expect a great anytime strain that will leave you with a grin without leaving your head in the clouds.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-23.png?auto=compress",
+    "parents": [
+      "Blue Diesel",
+      "GSC"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/citral-glue",
+    "name": "Citral Glue",
+    "description": "Bred by Ethos Genetics, Citral Glue is a sativa-dominant cross of Ethos' own Citral Skunk with the ever-popular Original Glue. Buds are coated in red hairs and give off beautiful diesel, citrus, and skunk aromas. This hybrid is uplifting and energetic, but its potency will keep the best of us stuck to the couch in cerebral and physical bliss. ",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-4.png?auto=compress",
+    "parents": [
+      "GG4"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Myrcene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/planet-of-the-grapes",
+    "name": "Planet of the Grapes",
+    "description": "Planet of the Grapes is a hybrid weed strain. Reviewers on Leafly say this strain makes them feel relaxed, euphoric, and hungry. If you've smoked, dabbed, or otherwise enjoyed this strain, Planet of the Grapes, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-16.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/chocolate-thai",
+    "name": "Chocolate Thai",
+    "description": "A legendary landrace strain from Thailand, Chocolate Thai first made an appearance in the U.S. sometime in the 1960s as \"Thai sticks,\" spindly flowers tied to a bamboo stick that were renowned for their potent high. Old school heads remember these buds as slender and airy, medium-to-dark brown in color, and possessing a unique chocolate-coffee aroma. Due to the fact that it was a long-flowering, low-yielding sativa strain that always produced male flowers and seeds and was incredibly difficult to clone and grow, it is most likely that Chocolate Thai no longer exists in its original form. There are several seed lines sold under the name, but these have either been crossbred to provide some stabilizing traits or are of unknown provenance.     ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-26.png?auto=compress",
+    "parents": [
+      "Thai"
+    ],
+    "children": [],
+    "type": "Sativa",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/tigers-milk",
+    "name": "Tiger's Milk",
+    "description": "Tiger's Milk, also known as \"Tiger Milk,\" by Bodhi Seeds is a powerful indica-dominant marijuana strain that descends from Bubba Kush and Appalachia. Initially, Tiger's Milk hits with intense cerebral euphoria, an experience described by its breeders as being borderline psychedelic. Tapering down to restful relaxation over time, this indica is commonly looked to for its pain-relieving and sleepy qualities. Its aroma is a complex mix of earthy notes, led by hints of sweet honey and hashy spice. ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-26.png?auto=compress",
+    "parents": [
+      "Appalachia",
+      "Bubba Kush"
+    ],
+    "children": [
+      "Crouching Tiger Hidden Alien"
+    ],
+    "type": "Indica",
+    "aliases": [
+      "Tiger Milk"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/tutti-frutti",
+    "name": "Tutti Frutti",
+    "description": "As the name suggests, Tutti Frutti provides a blast of fruit flavor that sativa lovers will flock to. Flash Seeds has taken genetic traits from Blue Haze, Green Haze, Thai, and others, then mixed in a fast-finishing ruderalis to create an automatic flowering strain that provides potent euphoric effects. The effects are known to come on slow, so be patient with these uplifting buds.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-31.png?auto=compress",
+    "parents": [
+      "Blue Haze"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Tootie Fruity"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/glazed-apricot-gelato",
+    "name": "Glazed Apricot Gelato",
+    "description": "Glazed Apricot Gelato is a sativa-dominant hybrid weed strain made from a genetic cross between Gelato and Legend Orange Apricot. Bred by Glass House Farms, Glazed Apricot Gelato is 16% THC, making this strain an ideal choice for beginner cannabis consumers. Leafly customers tell us Glazed Apricot Gelato effects make them feel tingly, uplifted, and euphoric. Medical marijuana patients often choose Glazed Apricot Gelato when dealing with symptoms associated with stress, anxiety, and depression. The dominant terpene of this cannabis strain is terpinolene. Glazed Apricot Gelato features a sweet aroma and flavor profile of apricot and tree fruit. If you've smoked, dabbed, or consumed Glazed Apricot Gelato, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-4.png?auto=compress",
+    "parents": [
+      "Gelato"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Apricot Gelato",
+      "Glazed Apricot"
+    ],
+    "terpenes": [
+      "Terpinolene",
+      "Caryophyllene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/high-society",
+    "name": "High Society",
+    "description": "High Society is a hybrid weed strain made by crossing Biscotti and Jet Fuel Gelato. Reviewers on Leafly say this strain makes them feel hungry, euphoric, and relaxed. High Society has 18% THC. The dominant terpene in this strain is limonene. If you've smoked, dabbed, or otherwise enjoyed this strain, High Society, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-14.png?auto=compress",
+    "parents": [
+      "Jet Fuel Gelato",
+      "Biscotti"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Limonene",
+      "Caryophyllene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/pink-picasso",
+    "name": "Pink Picasso",
+    "description": "Pink Picasso is a hybrid weed strain made by crossing Candyland with OZK X. Pink Picasso produces euphoric effects that leave you feeling blissful and uplifted. Consumers who have smoked this strain say it is relaxing, but will not leave you locked to the sofa. In fact, some consumers report this strain pairs well with exercise like yoga or pilates. Pink Picasso features a smooth citrus flavor profile with undertones of earthy pine. Pink Picasso is believed to be 22% THC, making it an ideal strain choice for experienced cannabis consumers. According to weed growers, the original breeder of Pink Picasso is Wonderbrett.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-1.png?auto=compress",
+    "parents": [
+      "OZK",
+      "Candyland"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/white-guava",
+    "name": "White Guava",
+    "description": "White Guava, also known as White Hot Guava,, is a hybrid weed strain. Reviewers on Leafly say this strain makes them feel relaxed, giggly, and aroused. If you've smoked, dabbed, or otherwise enjoyed this strain, White Guava, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-1.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "White Hot Guava"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/banana-sherbet",
+    "name": "Banana Sherbet",
+    "description": "Banana Sherbet, also known as \"Banana Sherbert,\" is a potent hybrid marijuana strain made by crossing Banana Kush and Sunset Sherbet. Banana Sherbet is a strain that is especially loved by creators and artists for its ability to help boost creative thinking and provide inspiration. As its name suggests, Banana Sherbet smells and tastes like ripe bananas. Because of its potency, those with less experience smoking THC should smoke Banana Sherbet in small quantities until you get comfortable with the strain. Banana Sherbet buds are bright and frosty with shades of green and yellow hairs. Medical marijuana patients choose Banana Sherbet for its pain-reducing qualities.",
+    "image": "https://images.leafly.com/flower-images/defaults/frosty/strain-4.png?auto=compress",
+    "parents": [
+      "Banana Kush",
+      "Sherbert"
+    ],
+    "children": [
+      "Sour Banana"
+    ],
+    "type": "Hybrid",
+    "aliases": [
+      "Banana Sherbert"
+    ],
+    "terpenes": [
+      "Limonene",
+      "Myrcene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/rebel-sour",
+    "name": "Rebel Sour",
+    "description": "Rebel Sour, also known as Rebel Sour 2.0,, is a hybrid weed strain made by crossing Sour OG and East Coast Sour Diesel. Reviewers on Leafly say this strain makes them feel talkative, uplifted, and happy. If you've smoked, dabbed, or otherwise enjoyed this strain, Rebel Sour, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-17.png?auto=compress",
+    "parents": [
+      "East Coast Sour Diesel",
+      "Sour OG"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Rebel Sour 2.0"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/blue-widow",
+    "name": "Blue Widow",
+    "description": "Blue Widow is a cross between Blueberry and White Widow that provides consumers with both uplifting and calming effects. This flower will have a strong, sweet aroma that may also include sour citrus or pine. The buds can be colorful, with tints of blue and purple, and should have a coat of long orange hairs. Blue Widow plays against type, growing taller than most indicas and providing more mental, heady effects. In higher doses, the blissful relaxation this strain provides may lead to drowsiness and help you get to sleep.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-12.png?auto=compress",
+    "parents": [
+      "Blueberry",
+      "White Widow"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Terpinolene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/dirty-sprite-breath",
+    "name": "Dirty Sprite Breath",
+    "description": "Dirty Sprite Breath is a hybrid weed strain. Reviewers on Leafly say this strain makes them feel uplifted, aroused, and tingly. If you've smoked, dabbed, or otherwise enjoyed this strain, Dirty Sprite Breath, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-25.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/purple-ice",
+    "name": "Purple Ice",
+    "description": "If you're looking to knock out stress in a hurry, Purple Ice may be the strain for you. Potent and relaxing, this hybrid is good for any time of day. Slightly sativa-dominant, Purple Ice produces euphoric and focused effects in users. This strain is known for creating a calming, tingly sensation that begins in the head before traveling to the rest of your body. Purple Ice features a slight blueberry scent and a mellow taste, making it a great strain for new users.\n ",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-12.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/god-bud",
+    "name": "God Bud",
+    "description": "God Bud is an indica marijuana strain made by crossing Hawaiian with Purple Skunk. The effects of God Bud are potent, providing consumers with an instantaneous and sedating high. This strain features tropical fruit flavors with undertones of berry, lavender, and pine. Growers say God Bud produces large, dense buds that are short and tinged with purple. Medical marijuana patients choose this strain to relieve symptoms associated with insomnia. God Bud originated in Canada and is sometimes called BC God Bud.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-5.png?auto=compress",
+    "parents": [
+      "Purple Skunk",
+      "Hawaiian"
+    ],
+    "children": [
+      "God's Green Crack",
+      "Jelly Roll"
+    ],
+    "type": "Indica",
+    "aliases": [
+      "Purple God Bud"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/alien-kush",
+    "name": "Alien Kush",
+    "description": "Alien Kush is a potent cross of LVPK and Alien Dawg that originally hails from California, not deep space. It may have you feeling a little spacey, though, as this strain touches down in the brain first, giving active, sometimes-psychedelic effects. The active buzz settles over time into a relaxing body buzz that will dissolve both stress and pain. Alien Kush plants have average yields, but they are hardy, easy-to-grow plants, indoors or out. The light green buds have a covering of red or orange hairs and should be airy. This strain has a piney smell, but the taste is a subtle spiciness that is reminiscent of tea.",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-3.png?auto=compress",
+    "parents": [
+      "LVPK",
+      "Alien Dawg"
+    ],
+    "children": [
+      "Alien OG",
+      "Gas Mask"
+    ],
+    "type": "Indica",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/cherry-garcia",
+    "name": "Cherry Garcia",
+    "description": "Cherry Garcia, also known as \"Garcia's Cherry\" and \"Cherry Gar See Ya,\" is a hybrid marijuana strain made by crossing Animal Cookies with 3x Crazy. Consumers say this strain is balancing, with continued use, it is more calming than energizing. Cherry Garcia effects will make you feel happy, relaxed, and euphoric. Consumers who smoked this strain say it makes them giggly and can help improve your mood. The flavor of Cherry Garcia is on the sweet side, with berry and cherry aromas shining through. Medical marijuana patients tell us they choose this strain to relieve symptoms related to stress, pain, and depression. Cherry Garcia was originally bred by Natural State Cultivation.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-35.png?auto=compress",
+    "parents": [
+      "3X Crazy",
+      "Animal Cookies"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Garcia's Cherry",
+      "Cherry Gar See Ya"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/mcflurry",
+    "name": "Flurry",
+    "description": "If you've smoked, dabbed, or otherwise enjoyed this strain, Flurry, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-39.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "McFlurry"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/cement-shoes",
+    "name": "Cement Shoes",
+    "description": "Cement Shoes, also known as \"Concrete Shoes\" and \"Concrete Slippers,\" is a strong indica marijuana strain made by crossing Animal Cookies with OGKB and Wet Dream. Much like the strain name suggests, Cement Shoes will make you feel like you're actually wearing shoes made of heavy cement. Cement Shoes is the ideal strain for smoking at night or during times when you don't have to leave the house - and for good reason. Cement Shoes is known for providing a full-body high that is sure to send you into an extended stay on the nearest sofa. The flavor of Cement Shoes is earthy and citrusy. Medical marijuana patients choose this strain for its anti-inflammatory properties. Cement Shoes is 22% THC, making it an ideal choice for cannabis consumers with a high THC tolerance.",
+    "image": "https://images.leafly.com/flower-images/defaults/short-dense-heavy/strain-9.png?auto=compress",
+    "parents": [
+      "OGKB",
+      "Animal Cookies"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [
+      "Concrete Slippers",
+      "Concrete Shoes"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Humulene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/lorange",
+    "name": "L'Orange",
+    "description": "L'Orange is a hybrid weed strain made from a genetic cross between Oregon Lemon and Orange Crush. L'Orange is 15% THC, making this strain an ideal choice for beginner cannabis consumers. Leafly customers tell us L'Orange effects include focus, feeling energized, and arousal. Medical marijuana patients often choose L'Orange when dealing with symptoms associated with stress, anxiety, and depression. Bred by Cannabiotix, L'Orange features flavors like orange, citrus and menthol. The dominant terpene of this strain is caryophyllene. The average price of L'Orange typically ranges from $25-$35. If you've smoked, dabbed, or consumed L'Orange, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-3.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Myrcene",
+      "Humulene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/tutankhamon",
+    "name": "King Tut",
+    "description": "King Tut, also known as \"Tutankhamon,\" and \"Pharaoh,\" is a potent sativa marijuana strain made from a cross of AK-47. King Tut produces uplifting effects, making it an ideal choice for social outings or creative stimulation. This strain features flavors that are sour, skunky and fruity. Medical marijuana patients choose King Tut to help relieve symptoms associated with pain. Growers say this strain is sensitive to high humidity and fungus, but makes for an excellent mother plant.\nQuestions about King Tut\nIs King Tut an indica or sativa?\nKing Tut is a sativa strain.\nHow does King Tut make you feel?\nKing Tut makes you feel happy, uplifted, and energetic.\nHow does King Tut taste?\nKing Tut tastes skunky with sweet and earthy undertones.\nWhat terpenes are in King Tut?\nKing Tut features myrcene as the dominant terpene.\nWhat strains are similar to King Tut?\nStrains similar to King Tut include Monkey Mints, Tangerine Dream, and SFV OG Kush.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-31.png?auto=compress",
+    "parents": [
+      "AK-47"
+    ],
+    "children": [],
+    "type": "Sativa",
+    "aliases": [
+      "Tutankhamon",
+      "Pharaoh"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/tropical-cookies",
+    "name": "Tropical Cookies",
+    "description": "Tropical Cookies is a sativa-dominant hybrid weed strain made from a genetic cross between Girl Scout Cookies and Pineapple Skunk. Bred by Growers Choice, Tropical Cookies is 21% THC, making this strain an ideal choice for experienced cannabis consumers. Leafly customers tell us Tropical Cookies effects make them feel focused, uplifted, and energetic. Medical marijuana patients often choose Tropical Cookies when dealing with symptoms associated with stress, headaches, and lack of appetite. The dominant terpene of this cannabis strain is caryophyllene. Tropical Cookies features an aroma and flavor profile of pineapple, mango, and pear. If you've smoked, dabbed, or consumed Tropical Cookies, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-37.png?auto=compress",
+    "parents": [
+      "Pineapple Skunk"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Humulene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/platinum-cake",
+    "name": "Platinum Cake",
+    "description": "Platinum Cake, also known as \"Platinum Cheesecake\" and \"Platinum Cheese Cake,\" is a indica-dominant hybrid marijuana strain made by crossing Platinum OG with Wedding Cake. This strain produces strong body effects that will make you feel extremely relaxed and euphoric. Consumers who have smoked this strain say the effects come on quickly and can sometimes feel hazy. Platinum Cake is ideal for evening use, as the effects easily become sedating with continued use. This strain features a flavor profile that will remind you of earthy coffee and cake, with subtle undertones of dried fruit. Medical marijuana patients choose Platinum Cake to help relieve symptoms associated with chronic pain, headaches, anxiety, and inflammation. Growers say this strain comes in beautiful buds with visible trichomes and purple coloring throughout. If you've smoked, dabbed or consumed Platinum Cake, tell us about your experience by leaving a review of this strain.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-3.png?auto=compress",
+    "parents": [
+      "Platinum OG",
+      "Wedding Cake"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Platinum Cheese Cake",
+      "Platinum Cheesecake"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/dream-queen",
+    "name": "Dream Queen",
+    "description": "Dream Queen is a hybrid marijuana strain made by crossing Blue Dream with Space Queen. Dream Queen produces effects that will leave you in a euphoric, dream-like state after just a few puffs. This strain is pungent and reminiscent of pineapple, bubblegum, citrus and menthol. Growers say this strain comes in very frosty, light green buds. This strain will have you sticking your nose back in the jar over and over again to smell its unique aroma.",
+    "image": "https://images.leafly.com/flower-images/defaults/frosty/strain-6.png?auto=compress",
+    "parents": [
+      "Space Queen",
+      "Blue Dream"
+    ],
+    "children": [
+      "Peach Cobbler",
+      "Queen's Panties"
+    ],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Ocimene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/vanilla-kush",
+    "name": "Vanilla Kush",
+    "description": "This indica strain comes from Barney's Farm in Amsterdam and clinched 2nd place overall at the 2009 High Times Cannabis Cup for the coffee shop and seed company. Bred from Afghan and Kashmir strains, this Kush beauty is a gift to the senses with her notes of vanilla, lavender, and a hint of citrus. Plants flower in 8 weeks and produce large, soft flowers that are light green with hints of orange. ",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-2.png?auto=compress",
+    "parents": [
+      "South Asian Indica",
+      "Afghani"
+    ],
+    "children": [
+      "Root Beer Float",
+      "Vanilla Cream Pie"
+    ],
+    "type": "Indica",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/fish-scale",
+    "name": "Fish Scale",
+    "description": "Fish Scale is an indica-dominant hybrid weed strain made from a genetic cross between Gelatti and The Menthol. Fish Scale is 25% THC, making this strain an ideal choice for experienced cannabis consumers. Leafly customers tell us Fish Scale's effects include sleepy,  focused, and creative. Medical marijuana patients often choose Fish Scale when dealing with symptoms associated with anxiety, and a lack of appetite. Bred by Compound Genetics and Cookies, Fish Scale features flavors like ammonia, sweet and grape. The dominant terpene of this strain is myrcene. The average price of Fish Scale typically ranges from $25-$45 for ⅛ depending on where you live. If you've smoked, dabbed, or consumed Fish Scale, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-17.png?auto=compress",
+    "parents": [
+      "The Menthol",
+      "Gelatti"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Fish Scales"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/jungle-juice",
+    "name": "Jungle Juice",
+    "description": "Bred by Golden State Genetics, Jungle Juice is a hybrid strain that crosses Animal Cookies and their in-house Tangie male. Balancing sweet and sour citrus flavors, this strain offers a flavorful release from stress, sleeplessness, and pain.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-15.png?auto=compress",
+    "parents": [
+      "Tangie",
+      "Animal Cookies"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Limonene",
+      "Myrcene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/lemon-sorbet-3",
+    "name": "Lemon Sorbet #3",
+    "description": "Bred by Gabriel Cannabis, Lemon Sorbet #3 (aka LS3) is a cross between Lemon OG and Sherbert. This indica-dominant hybrid carries the sweet scent of berries and creamy lemon while its flavor offers additional notes of fuel. Lemon Sorbet #3 provides strong euphoria with a slightly sleepy aftermath, making it a perfect choice for winding down in the evening.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-4.png?auto=compress",
+    "parents": [
+      "Lemon OG",
+      "Sherbert"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Limonene",
+      "Caryophyllene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/gobbstopper",
+    "name": "Gobbstopper",
+    "description": "Gobbstopper is a berry flavored indica strain and the second entry in Alphakronik Genes' Wonka Series. Created by crossing Purple Urkle and Sin City Kush, Gobbstopper's long-lasting fruity flavor opens up on the nose with sweet, tart fruit and savory earthiness. This strain's aroma ranges from grape Pez with hints of tapioca to Mt. Hood raspberries and sandalwood. Its bud structure reflects its Kush genetics, offering deep colors and healthy trichome coverage. The effects are relaxing and floaty, \"making you feel as if you were floating down a river of warm, melted chocolate,\" or so says Alphakronik.\n ",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-13.png?auto=compress",
+    "parents": [
+      "Sin City Kush",
+      "Purple Urkle"
+    ],
+    "children": [
+      "Oregon Noble",
+      "Madhatter"
+    ],
+    "type": "Indica",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/pie-hoe",
+    "name": "Pie Hoe",
+    "description": "Coming from Cannarado, Pie Hoe crosses Grape Pie and Tahoe OG. Pie Hoe was developed in Colorado and then sent to the Jungle Boyz in L.A., who selected the best pheno to give it traction to become a new favorite. An incredibly dank OG with a bit of grape flavor, Pie Hoe is a gassy, fruity, and pungent strain that will make your mouth water. Its high is not for the faint of heart, as it will swallow you up into a state of bliss for hours before slowly fading away. ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-29.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Grape Pie Hoe"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/pie-face-og",
+    "name": "Pie Face",
+    "description": "Pie Face, also known as \"Pie Face OG\" and \"Pie Face OG Kush,\" is a hybrid marijuana strain made by crossing Cherry Pie with Face Off OG. Originally bred by  Archive Seed Bank, this 60/40 indica-dominant hybrid carries a sweet cherry and earthy hash flavor, taking after both sides of the family. Though potently euphoric, Pie Face effects leave enough mental clarity for you to stay functional and engaged throughout the day's tasks. This hybrid is ideal for social afternoons, unwinding after a stressful day, or kick-starting the appetite.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-32.png?auto=compress",
+    "parents": [
+      "Face Off OG",
+      "Cherry Pie"
+    ],
+    "children": [
+      "California Love OG"
+    ],
+    "type": "Hybrid",
+    "aliases": [
+      "Pie Face OG",
+      "Pie Face OG Kush"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/chocolate-mint-og",
+    "name": "Chocolate Mint OG",
+    "description": "Created by Humboldt Seed Organization, Chocolate Mint OG crosses Emerald OG with the famous Grandaddy Purple. Much like its parents, this strain has big dense buds. With a name as enticing as it sounds, deep flavors and aromas surround Chocolate Mint OG with its notes of chocolate, mint, pine, and spice. The exceptionally potent high is balanced, making this a great strain for experienced smokers who are read to take off. ",
+    "image": "https://images.leafly.com/flower-images/defaults/short-dense-heavy/strain-12.png?auto=compress",
+    "parents": [
+      "Emerald OG",
+      "Granddaddy Purple"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Humulene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/sour-grape",
+    "name": "Sour Grape",
+    "description": "Get ready to pucker up, because this strain truly tastes like sour grapes. A pungent cross between Sour Diesel and Granddaddy Purple, Sour Grape has a very sour, fuel-like scent with fruity aftertones. Introspective and relaxing, this strain is great for winding down with a cup of tea or a low-key evening with friends. Sour Grape walks the fine line between energizing and calming, relaxing the muscles while avoiding strong sedative effects. This strain works well for consumers suffering from stress and muscle tension. It's different from the craft strain \"Sour Grapes,\" so remember to ask your budtender which one they carry.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-23.png?auto=compress",
+    "parents": [
+      "Granddaddy Purple",
+      "Sour Diesel"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/french-cookies",
+    "name": "French Cookies",
+    "description": "French Cookies is a rare sativa marijuana strain and is a variety of Platinum Cookies. This strain produces effects that are energizing and focused. French Cookies features a creamy, cookie flavor with just a hint of spice. The aroma of this strain smells like a classic cookies strain, which you'll recognize immediately upon opening your haul. French Cookies has minty green and purple nugs that are covered in trichomes. Because this is such a rare strain, be sure to appreciate if you are lucky enough to find this gem at your dispensary.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-8.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Sativa",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Humulene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/lemon-jack",
+    "name": "Lemon Jack",
+    "description": "While Lemon Jack has yet to earn the reputation of its father, Jack Herer, this sativa deserves some respect. A potent strain featuring a distinct, chemical-like lemon smell, Lemon Jack has strong psychoactive effects. Focused and energizing, this strain's effects draw from both its Jack Herer and Lemon Kush heritage. Like a strong cup of coffee, Lemon Jack is a daytime strain. Patients who suffer from headaches and fatigue tend to find relief with this strain, though it may not be the best choice for those who suffer from anxiety.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-9.png?auto=compress",
+    "parents": [
+      "Lemon Kush",
+      "Jack Herer"
+    ],
+    "children": [
+      "Lemon Créme",
+      "Lemon Margy"
+    ],
+    "type": "Sativa",
+    "aliases": [],
+    "terpenes": [
+      "Terpinolene",
+      "Caryophyllene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/chocolate-kush",
+    "name": "Chocolate Kush",
+    "description": "Chocolate Kush, bred by 00 Seeds, is a powerful indica strain that captures the best of its two parent strains. Mazar, with its resin-oozing buds, lends its potent full-body euphoria while its other pure indica parent passes on a pungent aroma of hashy incense and chocolate. This strain grows into medium-sized plants with a Christmas tree structure and flowers in 56 to 60 days. The sativa-dominant Chocolope Kush sometimes goes by the name Chocolate Kush, so be sure to confirm this strain's genetics with your budtender if you're looking for the heavy-handed indica.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-37.png?auto=compress",
+    "parents": [
+      "Mazar I Sharif"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Limonene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/apple-sundae",
+    "name": "Apple Sundae",
+    "description": "Apple Sundae is a hybrid weed strain made by crossing Apple Juice with Sundae Driver. The effects of Apple Sundae are believed to be euphoric and relaxing. Reviewers on Leafly say this strain makes them feel uplifted, giggly and energetic. Apple Sundae has 18% THC. The dominant terpene is pinene, with a profile that emits a sour, fruity aroma and a taste akin to buttery apples. Medical marijuana patients say they buy Apple Sundae during episodes of chronic fatigue, depression, and eye pressure. The original breeder of Apple Sundae is Cannarado Genetics.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-7.png?auto=compress",
+    "parents": [
+      "Sundae Driver"
+    ],
+    "children": [],
+    "type": "Sativa",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Myrcene",
+      "Humulene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/liberty-haze",
+    "name": "Liberty Haze",
+    "description": "Winner of the 2011 High Times Cannabis Cup, Liberty Haze quickly became popular for its fast flowering time and unique taste. Bred by Barner's Farm, this cross between G13 and Chemdawg 91 matures as a medium-tall, bushy plant in 8-9 weeks. The buds are lime-green, heavy with crystals, and usually have plenty of red hairs. Consumers like this strain for its refreshing lime taste and its potency. This hybrid can offer uplifting cerebral effects, making it a popular choice for those treating depression and anxiety.\nQuestions about Liberty Haze\nIs Liberty Haze an indica or sativa?\nLiberty Haze is a hybrid strain with both indica and sativa qualities.\nHow does Liberty Haze make you feel?\nLiberty Haze makes you feel happy, relaxed, and energetic.\nHow does Liberty Haze taste?\nLiberty Haze tastes earthy with notes of citrus and lime.\nWhat terpenes are in Liberty Haze?\nLiberty Haze features limonene as the dominant terpene.\nWhat strains are similar to Liberty Haze?\nStrains similar to Liberty Haze include Blue Raspberry, Super Sour Diesel, Strawberry Banana, and Banana OG.",
+    "image": "https://images.leafly.com/flower-images/iAziwpkiQlmMoR4OE3kM_LIBERTY%20HAZE-240-edited.jpg?auto=compress",
+    "parents": [
+      "G13"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Limonene",
+      "Caryophyllene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/dragon-fruit",
+    "name": "Dragon Fruit",
+    "description": "A product of two favorites from Bodhi Seeds, Dragon Fruit crosses Snow Lotus with Oldsog's Silver Haze to create a hybrid that will get your mind and body buzzing. With lime green buds, Dragon Fruit comes drenched in trichomes with dank fruity and musky aromas that will awaken your senses. ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-40.png?auto=compress",
+    "parents": [
+      "Snow Lotus"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Linalool"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/huckleberry",
+    "name": "Huckleberry",
+    "description": "The origins and genetics of Huckleberry are under debate, but there is no disputing the strain's unmistakable berry aroma. The flower is compact, light green in color, and generally covered in orange hairs. Huckleberry plants have a flowering time of 8-9 weeks and produce average yields. They might be a bit tricky for the novice grower. The effects of this strain are on the milder side and largely reported as relaxing, cutting through stress without the cloudiness. Undoubtedly, this strain is best known for its intense fruity smell and taste, similar to its relative Blueberry.",
+    "image": "https://leafly-public.imgix.net/strains/photos/ck4MuaqPSiqlAQnvAzWE_Huckleberry_1080.png?auto=compress",
+    "parents": [],
+    "children": [
+      "Crater Lake",
+      "Blue Heron"
+    ],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Terpinolene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/j1",
+    "name": "J1",
+    "description": "J1, also known as \"Jack One,\" \"Jack 1,\" and \"J-1,\" is a high-end hybrid marijuana strain that is gaining widespread popularity. J1 is a cross between two famous sativas, Skunk #1 and Jack Herer, and is best known for its strong, uplifting, clear-headed buzz that allows for extra mobility. The flowers are emerald green and frosty with a sweet aroma resembling the unmistakable Jack Herer pungency. This strain's seemingly only flaw is the top-shelf price that tends to come with its exceptional quality.",
+    "image": "https://images.leafly.com/flower-images/defaults/frosty/strain-2.png?auto=compress",
+    "parents": [
+      "Skunk 1",
+      "Jack Herer"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Jack One",
+      "Jack 1",
+      "J-1"
+    ],
+    "terpenes": [
+      "Terpinolene",
+      "Caryophyllene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/white-gold",
+    "name": "White Gold",
+    "description": "White Gold, also known as \"Oro Blanco\" is a hybrid marijuana strain made by crossing White Widow with Himalayan Gold. This strain produces euphoric effects that allow you to focus. White Gold tastes sweet and earthy with a hint of fruitiness. It has a pungent haze aroma. Growers say White Gold has dense colas that are caked in sticky resin.",
+    "image": "https://images.leafly.com/flower-images/defaults/short-dense-heavy/strain-20.png?auto=compress",
+    "parents": [
+      "Himalayan Gold",
+      "White Widow"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Oro Blanco"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/crumpets",
+    "name": "Crumpets",
+    "description": "Crumpets is an indica-dominant hybrid weed strain made from a genetic cross between 3 Kings OG and London Pound Cake. Bred by Cresco Labs, Crumpets is 24% THC, making this strain an ideal choice for experienced cannabis consumers. Leafly customers tell us Crumpets effects make them feel talkative, tingly, and sleepy. Medical marijuana patients often choose Crumpets when dealing with symptoms associated with stress, anxiety, and depression. The dominant terpene of this cannabis strain is caryophyllene. Crumpets features an aroma and flavor profile of butter, tar, and woody notes. If you've smoked, dabbed, or consumed Crumpets, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-33.png?auto=compress",
+    "parents": [
+      "London Pound Cake"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/gello",
+    "name": "Gello",
+    "description": "Gello is a hybrid marijuana strain made by crossing Flo with Gelato 45. This strain produces a mellow high with effects rooted in physical relaxation. For this reason, Gello is ideal for those with a low THC tolerance, or your friend who has never smoked before. The flavor profile of this strain features sugary flavors like sweet berry and citrus. The aroma is similar, with hints of sour herbs. Medical marijuana patients choose Gello to help relieve symptoms associated with fatigue, pain, and stress. Growers say this strain grows in small, dense buds with dark green and purple foliage that almost appear black. We're still learning about the flavors and effects of Gello - if you've smoked, dabbed, or consumed this strain, tell us about your experience by leaving a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-5.png?auto=compress",
+    "parents": [
+      "Flo",
+      "Gelato 45"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/purple-chemdawg",
+    "name": "Purple Chemdawg",
+    "description": "Purple Chemdawg is a potent 75/25 indica-dominant cross between Chemdawg and Granddaddy Purple that delivers powerfully relaxing effects alongside a sweet grape aroma. Though Purple Chemdawg weighs heavy on the body, it leaves your mind free to wander creative, introspective realms. Another rendition by the Cali Connection, dubbed \"Purple Chem,\" pulls from the genetic line of Chemdawg 91 and Pre-98 Bubba Kush who pass on a similar balance of effects, but with a biting diesel aroma. Patients medicating with Purple Chemdawg have generally found relief for chronic pain while others enjoy its ability to soothe stress and anxiety.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-20.png?auto=compress",
+    "parents": [
+      "Chemdawg",
+      "Granddaddy Purple"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [
+      "Purple Chem",
+      "Purple Chemdog"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/blue-magoo",
+    "name": "Blue Magoo",
+    "description": "Blue Magoo, not to be confused with its look-alike Blue Goo, is a clone-only cross of DJ Short Blueberry and Major League Bud (also known as William's Wonder F2). A fusion of berry, fruit, and other floral notes makes up the aroma and taste of Blue Magoo, resulting in a palate as colorful as its pastel purple and green buds. Blue Magoo is a favorite among patients as it combats a variety of symptoms including pain, nausea, insomnia, anxiety, and appetite loss. ",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-17.png?auto=compress",
+    "parents": [],
+    "children": [
+      "Gobbilygoo",
+      "Bluniverse"
+    ],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/lemon-cheesecake",
+    "name": "Lemon Cheesecake",
+    "description": "Lemon Cheesecake, also known as \"Lemon Cheese,\" is a hybrid marijuana strain. Fragrant and unique, Lemon Cheesecake is the result of a cross between Lemon Skunk and Cheese. Its buds put off a powerful musky, earthy, and skunky aroma, while the flavor profile comes across a bit skunky with a sweet, creamy lemon flavor. Lemon Cheesecake's colas are coated in trichomes that nearly swallow fan leaves as they swell into dense buds. The high can be cerebral and uplifting, making this a great strain for creative activities.\n ",
+    "image": "https://images.leafly.com/flower-images/defaults/short-dense-heavy/strain-1.png?auto=compress",
+    "parents": [
+      "Cheese",
+      "Lemon Skunk"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Lemon Cheese"
+    ],
+    "terpenes": [
+      "Limonene",
+      "Linalool",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/diablo",
+    "name": "Diablo",
+    "description": "Bred from Grapefruit, Blueberry and South African Sativa, the Diablo cannabis strain announces itself with a sweet aroma. This indica expresses purple hues in its flowers, along with fruity and spicy flavors. Diablo has an indoor flowering time of 6-7 weeks and took second place at the 2002 BC Harvest Cup in the outdoor category.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-1.png?auto=compress",
+    "parents": [
+      "Grapefruit",
+      "Blueberry"
+    ],
+    "children": [
+      "Alien Inferno"
+    ],
+    "type": "Indica",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/white-berry",
+    "name": "White Berry",
+    "description": "White Berry, also known as \"White Raspberry,\" is a versatile indica marijuana strain that produces calming effects while giving users an extra pep in their step. When White Berry is consumed in higher quantities, the typical result is a sativa head high effect with an indica-style body high. Those who smoke White Berry also say it makes them feel creative happy. White Berry is made by crossing Blueberry with White Widow.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-12.png?auto=compress",
+    "parents": [
+      "Blueberry",
+      "White Widow"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [
+      "White Raspberry"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Myrcene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/og-cookies",
+    "name": "OG Cookies",
+    "description": "OG Cookies is a potent indica-dominant hybrid marijuana strain made by crossing OG Kush and GSC (aka Cookies, or Girl Scout Cookies). OG Cookies combines G Kush's lemon, pine, and fuel notes with GSC's savory complexity. OG Cookies is a very strong straub—often containing 20% or more THC and very little CBD, although there is a high-CBD variety. OG Cookies is best suited for leisure hours or before you head to sleep. Medical patients choose OG Cookies for relieving depression, stress, anxiety and pain. OG Cookies is very popular in the Northwest and comes as grams, eighth-ounces, prerolls, and extracts. The decade-old cultivar can be grown indoors and outside, requiring a moderate skill level to produce consistently potent, fragrant, and ample yields.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-33.png?auto=compress",
+    "parents": [
+      "OG Kush",
+      "GSC"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Humulene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/rocket-fuel",
+    "name": "Rocket Fuel",
+    "description": "Rocket Fuel is an indica-dominant hybrid cross between Jet Fuel OG and Face Off OG Bx1. It maintains a pungent, fuel-packed flavor profile, expressing notes of diesel and spice. With euphoric but relaxed effects that lift the mood while calming the body, Rocket Fuel may help alleviate pain, stress, and depression. ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-17.png?auto=compress",
+    "parents": [
+      "Face Off OG",
+      "Jet Fuel"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Limonene",
+      "Myrcene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/gods-green-crack",
+    "name": "God's Green Crack",
+    "description": "God's Green Crack is a balanced hybrid strain bred by Jordan of the Islands, who wanted to lighten up the heavy effects of God Bud with a high-flying Green Crack sativa. The indica and sativa parents work together to deliver a duality of head and body effects that lift the mood while relaxing muscles. Its buds take on a deep purple coloration toward the end of its maturation, especially when raised in lower temperatures. ",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-20.png?auto=compress",
+    "parents": [
+      "God Bud",
+      "Green Crack"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "God's Crack"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Linalool"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/cake-face",
+    "name": "Cake Face",
+    "description": "Cake Face is a hybrid weed strain made by crossing Animal Face and Face Off Bx2. Reviewers on Leafly say this strain makes them feel euphoric, giggly, and happy. Cake Face has 16% THC and 1% CBG. The dominant terpene in this strain is caryophyllene. If you've smoked, dabbed, or otherwise enjoyed this strain, Cake Face, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-31.png?auto=compress",
+    "parents": [
+      "Face Off Bx2",
+      "Animal Face"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Humulene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/purple-og-kush",
+    "name": "Purple OG Kush",
+    "description": "Purple OG Kush is a potent indica marijuana strain made by crossing OG Kush with Purple Kush. Purple OG Kush produces sedating effects that are intense and will envelope the mind and body quickly. The aroma of this strain is thick and musty, with undertones of berries and pine. Because Purple OG Kush will make you feel extremely sleepy and unfocused, this strain is ideal for nighttime use. This strain is not recommended for consumers with a low THC tolerance. Medical marijuana patients choose Purple OG Kush to relieve symptoms associated with insomnia.",
+    "image": "https://leafly-public.imgix.net/strains/photos/V3wdUBySQDareDyyuMLh_purple-kush_jman.jpg?auto=compress",
+    "parents": [
+      "Purple Kush",
+      "OG Kush"
+    ],
+    "children": [
+      "Purple Cake Batter",
+      "Jesse's Girl"
+    ],
+    "type": "Indica",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Limonene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/animal-cake",
+    "name": "Animal Cake",
+    "description": "Animal Cake is an Indica-dominant hybrid weed strain made from a genetic cross between Birthday Cake and Animal Cookies. Animal Cake is 18% THC, making this strain an ideal choice for beginner cannabis consumers. Animal Cake effects include relaxed, talkative, and giggly. Medical marijuana patients often choose Animal Cake when dealing with symptoms associated with anxiety and depression. Animal Cake features a flavor profile of vanilla, pepper, and lemon. The dominant terpene of this strain is myrcene and its breeder is unkown. If you've smoked, dabbed, or consumed Animal Cake, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-13.png?auto=compress",
+    "parents": [
+      "Birthday Cake",
+      "Animal Cookies"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Myrcene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/frosted-cherry-cookies",
+    "name": "Frosted Cherry Cookies",
+    "description": "Exactly what you would expect from a cross of Cherry Cookies and The White, Frosted Cherry Cookies is a trichome-rich take on the popular Cherry Cookies. Bred by Liberty Reach, this strain is tasty like the classic GSC with a sweet profile that's also crisp and fresh. The smooth taste makes for an enjoyable smoke, as you float into a mellow headspace. Frosted Cherry Cookies is a great daytime strain for experienced users, but also pleasant for anyone smoking at the end of the night. ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-29.png?auto=compress",
+    "parents": [
+      "Cherry Cookies",
+      "The White"
+    ],
+    "children": [
+      "Frosted Melon Gelato"
+    ],
+    "type": "Hybrid",
+    "aliases": [
+      "Frosted Cookies"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/apple-kush",
+    "name": "Apple Kush",
+    "description": "Apple Kush is the indica-dominant hybrid cross of Sour Diesel and Pure Kush. This strain leads with powerful cerebral effects that align well with people suffering from depression or anxiety, and follows with body effects that are ideal for curbing inflammation. Indulge in this Oregonian favorite later in the day, as the strain's creeping sedative effects can be rather weighty.   ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-26.png?auto=compress",
+    "parents": [
+      "Pure Kush",
+      "Sour Diesel"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/blueberry-pancakes",
+    "name": "Blueberry Pancakes",
+    "description": "Blueberry Pancakes is a delicious indica-dominant hybrid that miraculously tastes like blueberry pancakes. With dense, slightly purple buds, this strain exhibits an aroma of blueberries, grape, and dough. Flavors of syrup and tart berry are especially present when vaporized or when utilizing non-butane combustion techniques, like hemp wick or herb irons. Blueberry Pancakes offers classic indica effects, including a weighted, relaxing physical buzz that can curb physical discomfort, nausea, joint pain, and insomnia. ",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-1.png?auto=compress",
+    "parents": [
+      "DJ Short Blueberry"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Blueberry Pancake"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Humulene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/now-and-later",
+    "name": "Now and Later",
+    "description": "Now and Later, also known as \"Now N' Later,\" is an evenly balanced hybrid marijuana strain variety of Zkittlez. Now and Later gets its namesake from the famous candy and is sometimes known as Now N Later. Now and Later has a sweet, full flavor profile with aromas that are surprisingly earthy and spicy. Now and Later is a creeper strain, which means the high will slowly creep up on you instead of hitting you right away. At first, this strain comes on light and slow but will eventually put you in a sedated state. Growers say this strain comes in small nugs that are round and dotted with orange hairs. Medical marijuana patients choose Now and Later for its ability to fight symptoms related to chronic pain and fatigue.",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-2.png?auto=compress",
+    "parents": [
+      "Zkittlez"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Now N Later"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/3-kings",
+    "name": "3 Kings",
+    "description": "3 Kings, also known as \"Three Kings,\" is a sativa-dominant hybrid marijuana strain. Three Kings is a holy trinity of Headband, Sour Diesel, and OG Kush. This genetic masterpiece features an aroma of sour tanginess that reek from sage green buds. The frosty coat of 3 Kings gives you a fair warning of this strains' legendary potency. Medical patients will appreciate the versatility of this 3 Kings medicinal effects as it relieves pain, stress, and nausea without heavy sedation.",
+    "image": "https://images.leafly.com/flower-images/defaults/frosty/strain-8.png?auto=compress",
+    "parents": [
+      "OG Kush",
+      "Sour Diesel"
+    ],
+    "children": [
+      "CloudCap"
+    ],
+    "type": "Hybrid",
+    "aliases": [
+      "Three Kings"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/lemonhead-og",
+    "name": "Lemonhead OG",
+    "description": "Lemonhead OG by Royal Choice Farms is a gleeful Kush cut with bright, refreshing terpenes. Sweet on the nose and the palate, this strain offers consumers a clean, zestful lemon flavor coupled with a lung-expanding mint/eucalyptus. As with many OG strains, euphoria takes the lead, elevating the consumer's mood and provoking both smiles and laughter. The effects remain peppy as they transition into the body, leaving a warm and fuzzy sensation without being overly stimulating.   ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-1.png?auto=compress",
+    "parents": [
+      "C4",
+      "OG Kush"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Lemonhead",
+      "Lemon Heads #2"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Limonene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/nightshade",
+    "name": "Nightshade",
+    "description": "Nightshade, also written as Night Shade, is an indica weed strain made from a genetic cross between Kashmir and Nepalese landrace strains. Nightshade is 20% THC and 1% CBG, making this strain an ideal choice for both beginners and experienced cannabis consumers. Leafly customers tell us Nightshade effects include sleepy, aroused, and euphoric. Medical marijuana patients often choose Nightshade when dealing with symptoms associated with anxiety, insomnia, and pain. Bred by Barneys Farm, Nightshade features flavors like tree fruit, diesel, and plum. The dominant terpene of this strain is myrcene. The average price of Nightshade is approximately $60. If you've smoked, dabbed, or consumed Nightshade, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-24.png?auto=compress",
+    "parents": [
+      "Kashmir Kush",
+      "Nepalese"
+    ],
+    "children": [],
+    "type": "Indica",
+    "aliases": [
+      "Night Shade"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Terpinolene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/ooh-la-la",
+    "name": "Ooh La La",
+    "description": "Ooh La La is a hybrid weed strain made from a genetic cross between  Wedding Cake and London Poundcake. Bred by The Real Lemonnade, Ooh La La is 20% THC, making this strain an ideal choice for beginner and experienced cannabis consumers. Leafly customers tell us Ooh La La effects make them feel relaxed, talkative, and aroused. Medical marijuana patients often choose Ooh La La when dealing with symptoms associated with anxiety, depression, and bipolar disorder. The dominant terpene of this cannabis strain is caryophyllene. Ooh La La features an aroma and flavor profile of cheese, apricot, and slightly chemical. If you've smoked, dabbed, or consumed Ooh La La, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-12.png?auto=compress",
+    "parents": [
+      "London Cake",
+      "Wedding Cake"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/london-mints",
+    "name": "London Mints",
+    "description": "London Mints is an indica-dominant hybrid weed strain made from a genetic cross between London Pound Cake and Kush Mints. Bred by House Exotics, London Mints is 20% THC, making this strain an ideal choice for beginner and experienced cannabis consumers. Leafly customers tell us London Mints effects make them feel relaxed, talkative, and happy. Medical marijuana patients often choose London Mints when dealing with symptoms associated with stress, anxiety, and depression. The dominant terpene of this cannabis strain is caryophyllene. London Mints features an aroma and flavor profile of menthol, honey, and mint. If you've smoked, dabbed, or consumed London Mints, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-37.png?auto=compress",
+    "parents": [
+      "London Pound Cake",
+      "Kush Mints"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "London Pound Mints",
+      "London Pound Mintz",
+      "London Mintz"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Humulene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/mac-10",
+    "name": "MAC #10",
+    "description": "MAC #10, also known as \"MAC 10,\" \"MAC 10,\" and \"Miracle Alien Cookies #10,\" is an evenly balanced hybrid marijuana strain made by crossing Miracle Alien Cookies with Columbia Gold and Starfighter. MAC #10 has recently soared in popularity, making this strain hard to find but worth the search. This strain produces balancing effects that leave you feeling grounded and content. The mild effects of MAC #10 make it an ideal strain for a wake and bake session or all-day use. Medical marijuana patients choose this strain to relieve symptoms associated with depression and anxiety. MAC #10 features a fruity flavor profile that smells like creamy oranges and tastes like gassy apples. According to growers, this strain flowers into purple buds with a heavy layer of white trichomes and bright orange hairs. If you've smoked, dabbed, or consumed MAC #10, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-17.png?auto=compress",
+    "parents": [
+      "Starfighter",
+      "Alien Cookies"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Miracle Alien Cookies #10",
+      "MAC 10",
+      "MAC TEN"
+    ],
+    "terpenes": [
+      "Limonene",
+      "Terpinolene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/big-budda-cheese",
+    "name": "Big Buddha Cheese",
+    "description": "Cheese (also called UK Cheese or Exodus Cheese) is a famous clone-only strain that originated in England around 1989, reportedly from a pack of Sensi Seeds' Skunk #1. An extremely potent and high-yielding plant with a pungent cheese-like odor, it was passed around the underground to various growers and breeders over the years until it became one of the most popular and ubiquitous strains in the UK. Sometime around 2004, the breeder known as \"Big Buddha\" took this clone and crossed it with a carefully selected Afghani indica to create a seed version of Cheese. Big Buddha Cheese won the High Times 2006 Cannabis Cup in the indica category and went on to become probably the most popular and widely available Cheese hybrid produced in seed form. It is known for its sweet, tropical fruit meets skunky-cheese smell and large yields of high potency flowers.  ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-6.png?auto=compress",
+    "parents": [
+      "UK Cheese",
+      "Afghani"
+    ],
+    "children": [
+      "Chiesel",
+      "Cookies and Cream Cheese"
+    ],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Humulene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/chem-cookies",
+    "name": "Chem Cookies",
+    "description": "Chem Cookies is an indica-dominant marijuana strain made by crossing Chemdog #4 and GSC. Chem Cookies is cereberal and provides a euphoric high that will send your entire body into relaxation mode. Because this strain can make you feel extremely stoned, Chem cookies is ideal for experienced consumers with a high tolernace for THC. Chem Cookies has rich fuel flavors with notes of coffee and sweet plums. Growers say Chem Cookies produces beautiful and tightly packed buds with lime green and purple accents.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-19.png?auto=compress",
+    "parents": [
+      "Chemdawg",
+      "GSC"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/lemon-runtz",
+    "name": "Lemon Runtz",
+    "description": "Lemon Runtz is a hybrid weed strain. Reviewers on Leafly say this strain makes them feel euphoric, hungry, and aroused. If you've smoked, dabbed, or otherwise enjoyed this strain, Lemon Runtz, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-19.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/gorilla-glue-gelato",
+    "name": "Gorilla Glue Gelato",
+    "description": "Gorilla Glue Gelato is an Indica-dominant hybrid weed strain made from a genetic cross between GG4 and Gelato. Bred by Barney's Farm, Gorilla Glue Gelato is 13% THC, making this strain an ideal choice for beginner cannabis consumers. Leafly customers tell us Gorilla Glue Gelato effects make them feel relaxed,  happy, and sleepy. Medical marijuana patients often choose Gorilla Glue Gelato when dealing with symptoms associated with stress, depression, and insomnia. The dominant terpene of this cannabis strain is caryophyllene. Gorilla Glue Gelato features an earthy aroma and woody flavor profile with notes of apple. If you've smoked, dabbed, or consumed Gorilla Glue Gelato, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-9.png?auto=compress",
+    "parents": [
+      "Gelato",
+      "GG4"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Gelato Glue"
+    ],
+    "terpenes": [
+      "Caryophyllene",
+      "Humulene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/rainmaker",
+    "name": "Rainmaker",
+    "description": "Bred by Ethos Genetics, Rainmaker is a cross of Citral Skunk and Mandarin Sunset. It has a rich aroma of cheese, skunk, and citrus. Rainmaker's tall plants produce massive yields of flower, so make sure your grow space can accommodate it.\n ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-2.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Rain Maker"
+    ],
+    "terpenes": [
+      "Limonene",
+      "Caryophyllene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/kitchen-sink",
+    "name": "Kitchen Sink",
+    "description": "Kitchen Sink is a hybrid marijuana strain made by crossing Sundae Driver with GMO Cookies. This evenly-balanced strain produces uplifting effects that leave your mind focused and your body relaxed. Kitchen Sink is best reserved for consumers with a high THC tolerance, as THC levels usually hover around 18%. Medical marijuana patients choose this strain to help relieve symptoms associated with headaches, anxiety, and depression. According to growers, Kitchen Sink grows in pointed buds with dark and light green foliage dotted with orange hairs. This strain was originally bred by Connarado Genetics. If you've smoked, dabbed, or consumed Kitchen Sink, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-4.png?auto=compress",
+    "parents": [
+      "Sundae Driver",
+      "GMO Cookies"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/purple-candy",
+    "name": "Purple Candy",
+    "description": "Purple Candy, also known as \"Candy Purple,\" is a hybrid marijuana strain. Purple Candy is one of those indica-dominant crosses that's good all around, especially for those who need strong relaxing medication. This British Columbian strain is commonly thought to be a cross of BC Sweet Tooth and Mendocino Purps, and its large flowers with rich purple coloring and amber hairs support the purple genetics. Purple Candy's frosty buds will leave your hands sticky, much like normal candy, but instead of a sugar rush it will provide some happy sativa effects. The sensation will settle into a full body buzz that may leave you lazy and ready for bed. Sugary-sweet in scent and taste, Purple Candy will have you thinking of your favorite grape-flavored treat.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-8.png?auto=compress",
+    "parents": [
+      "BC Sweet Tooth",
+      "Mendocino Purps"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Candy Purple"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/platinum-punch",
+    "name": "Platinum Punch",
+    "description": "Platinum Punch is a hybrid marijuana strain made by crossing Platinum Wreck and Fruit Punch. Not much is known about this strain, but its effects are believed to be relaxing and focused. Platinum Punch is thought to taste herbal, with hints of citrus and pepper. This strain produces dense, light green nugs that are frosted with trichomes.\nQuestions about Platinum Punch\nIs Platinum Punch an indica or sativa?\nPlatinum Punch is a hybrid strain, meaning it features qualities of both indica and sativa.\nHow does Platinum Punch make you feel?\nPlatinum Punch makes you feel happy, relaxed, focused.\nHow does Platinum Punch taste?\nPlatinum Punch tastes floral with berry and citrus undertones.\nWhat terpenes are in Platinum Punch?\nPlatinum Punch features caryophyllene as the dominant terpene.\nWhat strains are similar to Platinum Punch?\nStrains similar to Platinum Punch include Tropicana Cookies, Platinum Cookies, and Bubba Kush.",
+    "image": "https://images.leafly.com/flower-images/defaults/short-dense-heavy/strain-1.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Limonene",
+      "Caryophyllene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/banana-pudding",
+    "name": "Banana Pudding",
+    "description": "Banana Pudding is a cross between GSC and Banana OG. When it comes to flavor, the name says it all—it's like eating a vanilla wafer cookie off the top of some fresh-made banana pudding; its earthy fruit flavor pairs perfectly with the doughy spiciness of GSC. Like most sweet and earthy kushes, this strain will offer a profound body effect, however, it won't be so stony that it keeps you from enjoying company. Banana Pudding is the perfect strain for watching funny movies at the end of the day with loved ones. Be prepared to experience plenty of belly laughs as you slowly melt into the couch. ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-29.png?auto=compress",
+    "parents": [
+      "Banana OG",
+      "GSC"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/blueberry-pie",
+    "name": "Blueberry Pie",
+    "description": "Blueberry Pie is the indica-dominant hybrid of two famous strains, Girl Scout Cookies and Blue Dream. Each strain in this potent cross has its own claim to fame, but when combined their unique attributes coalesce to form a strain greater than the sum of its parts. The blueberry flavor and mental haze of Blue Dream contributes to the stilted cerebral buzz, which is then anchored through the Kush-heavy effects of Girl Scout Cookies, amounting to a strain that shrugs off stress and mutes mild physical discomfort. \n ",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-2.png?auto=compress",
+    "parents": [
+      "GSC",
+      "Blue Dream"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Myrcene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/outer-space",
+    "name": "Outer Space",
+    "description": "Outer Space is a sativa-dominant strain that is a cross of Island Sweet Skunk and Trinity and is known for cerebral and creative effects. It has a citrusy odor that is strong and produces a flavorful smoke. Great as a daytime medicine.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-29.png?auto=compress",
+    "parents": [
+      "Trinity",
+      "Island Sweet Skunk"
+    ],
+    "children": [
+      "Blueberry Space Cake",
+      "Hayley's Haze"
+    ],
+    "type": "Sativa",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/carbon-fiber",
+    "name": "Carbon Fiber",
+    "description": "Carbon Fiber is a hybrid weed strain made by crossing Biscotti and Cookies and Cream. Reviewers on Leafly say this strain makes them feel talkative, aroused, and euphoric. Carbon Fiber has 24% THC and 1% CBG. The dominant terpene in this strain is caryophyllene. If you've smoked, dabbed, or otherwise enjoyed this strain, Carbon Fiber, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-39.png?auto=compress",
+    "parents": [
+      "Cookies and Cream",
+      "Biscotti"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/bernie-hanabutter",
+    "name": "Bernie HanaButter",
+    "description": "BernieHana Butter is a weed strain released by Cookies, and a Leafly Strain of Summer 2022. It's an extremely refined cross of lots of GSC genetics: (Jet Fuel Gelato x Guava) x (Blue Cookies x Oreoz). Users report aromas of butter, and dough plus funky, floral, berry, and gas. Bernie Butter has extremely high THC scores and users reports it's very relaxing like an indica hybrid.",
+    "image": "https://leafly-public.imgix.net/strains/photos/DrYZYNCdSGOCfkx1avSq_BernieHana%20Butter%20Photo%20Courtesy%20Cookies6.jpeg?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Indica",
+    "aliases": [],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/white-cherry-og",
+    "name": "White Cherry OG",
+    "description": "If you've smoked, dabbed, or otherwise enjoyed this strain, White Cherry OG, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-38.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "White Cherry"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/afgoo",
+    "name": "Afgoo",
+    "description": "Afgoo, also known as \"Afgooey\" and \"Afghan Goo,\" is a potent indica-dominant marijuana strain that is believed to descend from Afghani and Maui Haze. This strain may provide some uplifting creativity in smaller doses, but is generally reported to be relaxing and sleepy. Growers hoping to cultivate Afgoo may have a better chance of success indoors, but this indica can also thrive in Mediterranean climates outdoors.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-33.png?auto=compress",
+    "parents": [
+      "Island Maui Haze",
+      "Afghani"
+    ],
+    "children": [
+      "Gooberry",
+      "Double OG"
+    ],
+    "type": "Indica",
+    "aliases": [
+      "Afghan Goo",
+      "Afgooey"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Ocimene",
+      "Pinene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/sour-zkittlez",
+    "name": "Sour Zkittlez",
+    "description": "Sour Zkittlez is a Sativa-dominant hybrid weed strain made from a genetic cross between Sour Diesel and Zkittlez. Sour Zkittlez is 17% THC, making this strain an ideal choice for beginner cannabis consumers. Leafly customers tell us Sour Zkittlez effects make them feel uplifted, creative, and happy. Medical marijuana patients often choose Sour Zkittlez when dealing with symptoms associated with stress, anxiety, and lack of appetite. The dominant terpene of this cannabis strain is limonene. Sour Zkittlez features an aroma and flavor profile of lime, lemon, and diesel. If you've smoked, dabbed, or consumed Sour Zkittlez, tell us about your experience by leaving a strain review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-8.png?auto=compress",
+    "parents": [
+      "Zkittlez",
+      "Sour Diesel"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Sour Skittles"
+    ],
+    "terpenes": [
+      "Limonene",
+      "Caryophyllene",
+      "Myrcene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/tangerine",
+    "name": "Tangerine",
+    "description": "Tangerine is a sativa-dominant hybrid, a 4th generation daughter of Ch9 Aroma. The fruity tangerine aroma is accompanied with notes of mango and pineapple. Indoor or outdoor grows can expect flowers between 7 and 8 weeks.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-31.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/mob-boss",
+    "name": "Mob Boss",
+    "description": "Mob Boss, also known as \"Mob Boss Tang Tang,\" is a sativa-dominant hybrid marijuana strain made by crossing Chemdawg and Tang Tang. This strain originates from California and has earned fame for its staggeringly heavy resin production. Mob Boss delivers hard-hitting effects in the form of jolts of cerebral mental stimulation. Medical marijuana patients and consumers tell us they use Mob Boss for quick relief of muscle tension, mood relief, and appetite stimulation. The flavor of Mob Boss is sweet and floral with herbal citrus undertones. According to growers, Mob Boss typically finishes flowering in 60-70 days indoors, but say this ultimately depends on how the traits are expressed. This strain was originally released in 2009 by Grindhouse Medical Seeds.",
+    "image": "https://images.leafly.com/flower-images/defaults/short-dense-heavy/strain-17.png?auto=compress",
+    "parents": [
+      "Tang Tang",
+      "Chemdawg"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [
+      "Mob Boss Tang Tang"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Limonene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/blue-haze",
+    "name": "Blue Haze",
+    "description": "Blue Haze is a hybrid marijuana strain and the daughter of a Blueberry indica and the original Haze. This slightly sativa-dominant hybrid is a versatile strain. Blue Haze has a pleasing taste and scent, and its furry dense buds produce full-bodied effects. Blue Haze is a great candidate for the regular consumer's arsenal as it is appropriate for a broad spectrum of activities and provides the optimal balance between cerebral and physical effects.",
+    "image": "https://images.leafly.com/flower-images/defaults/short-dense-heavy/strain-4.png?auto=compress",
+    "parents": [
+      "Haze",
+      "Blueberry"
+    ],
+    "children": [
+      "Tutti Frutti"
+    ],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Myrcene",
+      "Pinene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/purple-thai",
+    "name": "Purple Thai",
+    "description": "Purple Thai, also known as \"Oregon Purple Thai\" and \"OPT,\" is a mostly sativa marijuana strain that crosses Highland Oaxacan Gold with Chocolate Thai. ",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-15.png?auto=compress",
+    "parents": [
+      "Mexican",
+      "Chocolate Thai"
+    ],
+    "children": [
+      "Purple Haze",
+      "Sweet Tart"
+    ],
+    "type": "Sativa",
+    "aliases": [
+      "Oregon Purple Thai",
+      "OPT"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Caryophyllene",
+      "Humulene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/sunset-runtz",
+    "name": "Sunset Runtz",
+    "description": "Sunset Runtz is a hybrid weed strain. Reviewers on Leafly say this strain makes them feel creative, euphoric, and giggly. Sunset Runtz has 23% THC. The dominant terpene in this strain is limonene. If you've smoked, dabbed, or otherwise enjoyed this strain, Sunset Runtz, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-18.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Limonene",
+      "Caryophyllene",
+      "Linalool"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/f1-durb",
+    "name": "F1 Durb",
+    "description": "F1 Durb is a closely held, mysterious hybrid made by Bay Area breeder Jigga, who used it to make GSC. It is a reported cross of his own \"F1\" and Durban. F1 Durb is closely held, and generally not for sale, or used in breeding. Jigga also crossed F1 Durb to GDP to make Cherry Pie.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-27.png?auto=compress",
+    "parents": [
+      "F1",
+      "Durban"
+    ],
+    "children": [
+      "GSC",
+      "Cherry Pie"
+    ],
+    "type": "Sativa",
+    "aliases": [
+      "F1 Durban"
+    ],
+    "terpenes": []
+  },
+  {
+    "url": "https://www.leafly.com/strains/wagyu",
+    "name": "Wagyu",
+    "description": "Wagyu is a weed strain. Reviewers on Leafly say this strain makes them feel tingly, relaxed, and sleepy. If you've smoked, dabbed, or otherwise enjoyed this strain, Wagyu, before let us know! Leave a review.",
+    "image": "https://images.leafly.com/flower-images/defaults/generic/strain-12.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "aliases": [],
+    "terpenes": [],
+    "type": "Hybrid"
+  },
+  {
+    "url": "https://www.leafly.com/strains/inzane-in-the-membrane",
+    "name": "Inzane In The Membrane",
+    "description": "Regarded as a high-yielding, potent powerhouse from Ethos Genetics, Inzane In The Membrane is a sativa with mysterious genetics. Frosty lime-green buds are covered in orange pistils and put off a loud lemon citrus aroma that blasts through the bag. Great for any connoisseur of cerebral highs, this strain will get you moving.",
+    "image": "https://images.leafly.com/flower-images/defaults/frosty/strain-2.png?auto=compress",
+    "parents": [],
+    "children": [],
+    "type": "Sativa",
+    "aliases": [
+      "Insane in The Membrane"
+    ],
+    "terpenes": [
+      "Myrcene",
+      "Limonene",
+      "Caryophyllene"
+    ]
+  },
+  {
+    "url": "https://www.leafly.com/strains/snowball",
+    "name": "Snowball",
+    "description": "Ethos Genetics bred Snowball by crossing The White with Chem 4 OG to produce large buds with a dense structure and massive resin production. Flowers will sometimes be an eye-catching purple among white trichomes. They hold a gassy, creamy, and earthy terpene profile that will entice any OG lover.",
+    "image": "https://images.leafly.com/flower-images/defaults/purple/strain-10.png?auto=compress",
+    "parents": [
+      "The White"
+    ],
+    "children": [],
+    "type": "Hybrid",
+    "aliases": [],
+    "terpenes": [
+      "Caryophyllene",
+      "Limonene",
+      "Myrcene"
+    ]
+  }
+]

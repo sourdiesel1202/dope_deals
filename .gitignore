@@ -2,3 +2,5 @@
 *.xlsx
 .DS_Store
 *.pyc
+job_finder.py
+configs/job_finder.json

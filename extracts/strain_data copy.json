@@ -1,0 +1,156 @@
+[
+{
+		"url": "https://www.leafly.com/strains/el-jeffe",
+		"name": "El Jefe",
+		"description": "El Jefe, also known as \"Jefe OG,\" is a potent indica marijuana strain made by crossing Abusive OG and Rare Dankness #1. This strain delivers a powerful and relaxing high that you can feel throughout your mind and body. El Jefe offers an earthy, lemon aroma with undertones of spice. Medical marijuana patients choose El Jefe to help relieve symptoms assocated with insomnia.",
+		"image": "https://images.leafly.com/flower-images/defaults/generic/strain-37.png?auto=compress",
+		"parents": ["Abusive OG", "Rare Dankness #1"],
+		"children": [],
+		"type": "Indica",
+		"aliases": ["Jefe OG"],
+		"terpenes": ["Caryophyllene (pepper)", "Limonene (citrus)", "Myrcene (herbal)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/y-griega",
+		"name": "Y Griega",
+		"description": "Also known as simply \"Y,\" the 80% sativa Y Griega is an energizing strain with a sweet floral, citrus aroma. Unusual for a sativa variety, Y Griega produces large, resin-coated buds on tall stalks. This sativa cross between Amnesia Haze and Kali Mist delivers an energetic cerebral buzz followed by a long-lasting calm that soothes both mind and body. Y Griega's high THC content makes it suitable for a variety of conditions including pain, inflammation, glaucoma, fatigue, and appetite loss. Growers won't be disappointed with Y Griega's yields, but its 85 to 95-day flowering time requires some devotion and patience.",
+		"image": "https://images.leafly.com/flower-images/defaults/generic/strain-15.png?auto=compress",
+		"parents": ["Kali Mist", "Amnesia Haze"],
+		"children": [],
+		"type": "Sativa",
+		"aliases": ["I Griega"],
+		"terpenes": ["Myrcene (herbal)", "Terpinolene (fruity)", "Caryophyllene (pepper)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/pav",
+		"name": "Pav\u00e9",
+		"description": "Pav\u00e9 is a marijuana strain from Compound Genetics. It's a blingy, minty, gassy cross of Paris OG and The Menthol. The award-winning breeder currently sells Pav\u00e9 seeds in new crosses Candy Pav\u00e9 (Eye Candy x Pav\u00e9), and the strawberry-scented Strawberry Pave (Red Pop x Pav\u00e9). Pav\u00e9 with the accento refers to jewelry so iced out you can't see the metal setting. The strain screams 2022 in exotics\u2014a white-out trichome blizzard burying a stacked, thick bud. Pav\u00e9 also dumps hash. This crazy-high-THC hybrid adds some blinding, heady bling to any situation. Grab some sunglasses.",
+		"image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-1.png?auto=compress",
+		"parents": ["The Menthol", "Paris OG"],
+		"children": [],
+		"type": "Hybrid",
+		"aliases": [],
+		"terpenes": []
+	},
+	{
+		"url": "https://www.leafly.com/strains/faygo-red-pop",
+		"name": "Red Pop",
+		"description": "Produced by 710 Savant, Red Pop (also known as Faygo Red Pop) is an indica strain that took 1st place as live resin in the 2015 High Times Michigan Cannabis Cup. This Afghani cross was named after a well-known Michigan soda and blooms with large rosy calyxes.",
+		"image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-1.png?auto=compress",
+		"parents": ["Afghani"],
+		"children": [],
+		"type": "Indica",
+		"aliases": ["Faygo Red Pop"],
+		"terpenes": ["Myrcene (herbal)", "Pinene (pine)", "Limonene (citrus)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/z-cube",
+		"name": "Z Cube",
+		"description": "Z Cube is a hybrid weed strain crossing Zkittlez and a type of OG Kush. Zkittlez and OG crosses bred from stock by Dying Breed Seeds have deep, sweet, fruit, syrup smells and corner store candy-aisle rainbow flavors that stain the palate and perfume a room. For effects, Z Cube is strong yet versatile daytime or night, making almost anything you pair it with better. \"Gleaming the Cube\" on Z Cube? Why not. Award-winning Zkittlez and OG terps can't stop shining.",
+		"image": "https://leafly-public.imgix.net/strains/photos/kvMVDRd2RU6RQvHmcjYx_BTY%20Z%20Cubed%20(David%20Downs:Leafly).jpg?auto=compress",
+		"parents": ["OG Kush", "Zkittlez"],
+		"children": [],
+		"type": "Hybrid",
+		"aliases": ["ZCube"],
+		"terpenes": ["Caryophyllene (pepper)", "Humulene (hoppy)", "Limonene (citrus)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/presidential-og",
+		"name": "Presidential OG",
+		"description": "Presidential OG, also known as \"Presidential Kush,\" and \"Presidential OG Kush,\" is an indica-dominant hybrid marijuana strain from Royal Queen Seeds. Presidential OG is made from a cross of Bubble Gum and OG Kush that will definitely get your attention with its intense citrus and pine smell. As far as taste, it maintains the pine flavor and heads into a more earthy terrain. This strain hits hard and fast with sedative effects that make this a popular choice for those dealing with insomnia or stress. Presidential OG is 90% indica and 10% sativa.",
+		"image": "https://images.leafly.com/flower-images/defaults/generic/strain-31.png?auto=compress",
+		"parents": ["Bubble Gum", "OG Kush"],
+		"children": [],
+		"type": "Indica",
+		"aliases": ["Presidential Kush", "Presidential OG Kush"],
+		"terpenes": ["Caryophyllene (pepper)", "Myrcene (herbal)", "Limonene (citrus)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/ogkz",
+		"name": "OGKZ",
+		"description": "From Humboldt Seed Organization, OGKZ crosses a 3rd generation Zkittlez from Family Seeds with OGKB (OG Kush Breath). Dense purple buds come loaded with tasty trichomes and orange pistils. OGKZ is a great choice for extraction, making for tasty dabs. If you're a fan of the tasty Zkittlez, try out this great cross.",
+		"image": "https://images.leafly.com/flower-images/defaults/purple/strain-1.png?auto=compress",
+		"parents": ["OGKB", "Zkittlez"],
+		"children": [],
+		"type": "Hybrid",
+		"aliases": [],
+		"terpenes": []
+	},
+	{
+		"url": "https://www.leafly.com/strains/platinum-purple-kush",
+		"name": "Platinum Purple Kush",
+		"description": "Platinum Purple Kush, also known as \"Platinum Purple\" and \"Purple Platinum,\" is an indica marijuana strain made from a cross of Purple Kush. Platinum Purple Kush is known for providing relaxing and euphoric effects that allow you to retain focus. This strain features a strong, grape aroma that is musky and unique. Consumers love Platinum Purple Kush because the euphoria starts off feeling like a sativa, but ends on a sedating indica note. This strain is ideal for evening use. Medical marijuana patients choose Platinum Purple Kush to help relieve symptoms assocated with insomnia and chronic pain.",
+		"image": "https://images.leafly.com/flower-images/defaults/purple/strain-11.png?auto=compress",
+		"parents": ["Purple Kush"],
+		"children": [],
+		"type": "Indica",
+		"aliases": ["Platinum Purple", "Purple Platinum"],
+		"terpenes": ["Caryophyllene (pepper)", "Myrcene (herbal)", "Humulene (hoppy)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/dark-star",
+		"name": "Dark Star",
+		"description": "Dark Star, also known as \"Darkstar,\" is an indica marijuana strain. Dark Star's effects are as spacey as its name suggests: a deep, relaxed sensation throughout the body accompanied by a heavy cerebral calm. Though celestial in its effects, the strain is more likely homage to the Grateful Dead's song \"Dark Star.\" A cross between Purple Kush and Mazar-I-Sharif, this dark, almost bluish strain was first bred indoors by T.H. Seeds, and comes as a challenge to many growers with its slow, 10-week flowering period. Its sour-smelling buds are dense and compact, ornamented with crystals and copper hairs.",
+		"image": "https://images.leafly.com/flower-images/defaults/purple/strain-22.png?auto=compress",
+		"parents": ["Mazar I Sharif", "Purple Kush"],
+		"children": ["Darkside OG"],
+		"type": "Indica",
+		"aliases": ["Darkstar"],
+		"terpenes": ["Caryophyllene (pepper)", "Limonene (citrus)", "Myrcene (herbal)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/smarties",
+		"name": "Smarties",
+		"description": "A collaboration between Connected Cannabis Co. and Cookies Fam, Smarties is a cross of GSC and Blue City Diesel. Much like the candy, Smarties offers a delicious terpene profile that's sweet, fruity, and tart. Consumers can expect a great anytime strain that will leave you with a grin without leaving your head in the clouds.",
+		"image": "https://images.leafly.com/flower-images/defaults/generic/strain-23.png?auto=compress",
+		"parents": ["Blue Diesel", "GSC"],
+		"children": [],
+		"type": "Hybrid",
+		"aliases": [],
+		"terpenes": ["Myrcene (herbal)", "Pinene (pine)", "Caryophyllene (pepper)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/citral-glue",
+		"name": "Citral Glue",
+		"description": "Bred by Ethos Genetics, Citral Glue is a sativa-dominant cross of Ethos' own Citral Skunk with the ever-popular Original Glue. Buds are coated in red hairs and give off beautiful diesel, citrus, and skunk aromas. This hybrid is uplifting and energetic, but its potency will keep the best of us stuck to the couch in cerebral and physical bliss. ",
+		"image": "https://images.leafly.com/flower-images/defaults/red-orange-amber/strain-4.png?auto=compress",
+		"parents": ["GG4"],
+		"children": [],
+		"type": "Hybrid",
+		"aliases": [],
+		"terpenes": ["Caryophyllene (pepper)", "Myrcene (herbal)", "Limonene (citrus)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/planet-of-the-grapes",
+		"name": "Planet of the Grapes",
+		"description": "Planet of the Grapes is a hybrid weed strain. Reviewers on Leafly say this strain makes them feel relaxed, euphoric, and hungry. If you've smoked, dabbed, or otherwise enjoyed this strain, Planet of the Grapes, before let us know! Leave a review.",
+		"image": "https://images.leafly.com/flower-images/defaults/generic/strain-16.png?auto=compress",
+		"parents": [],
+		"children": [],
+		"type": "Hybrid",
+		"aliases": [],
+		"terpenes": []
+	},
+	{
+		"url": "https://www.leafly.com/strains/chocolate-thai",
+		"name": "Chocolate Thai",
+		"description": "A legendary landrace strain from Thailand, Chocolate Thai first made an appearance in the U.S. sometime in the 1960s as \"Thai sticks,\" spindly flowers tied to a bamboo stick that were renowned for their potent high. Old school heads remember these buds as slender and airy, medium-to-dark brown in color, and possessing a unique chocolate-coffee aroma. Due to the fact that it was a long-flowering, low-yielding sativa strain that always produced male flowers and seeds and was incredibly difficult to clone and grow, it is most likely that Chocolate Thai no longer exists in its original form. There are several seed lines sold under the name, but these have either been crossbred to provide some stabilizing traits or are of unknown provenance.     ",
+		"image": "https://images.leafly.com/flower-images/defaults/generic/strain-26.png?auto=compress",
+		"parents": ["Thai"],
+		"children": [],
+		"type": "Sativa",
+		"aliases": [],
+		"terpenes": ["Myrcene (herbal)", "Caryophyllene (pepper)", "Pinene (pine)"]
+	},
+	{
+		"url": "https://www.leafly.com/strains/tigers-milk",
+		"name": "Tiger's Milk",
+		"description": "Tiger's Milk, also known as \"Tiger Milk,\" by Bodhi Seeds is a powerful indica-dominant marijuana strain that descends from Bubba Kush and Appalachia. Initially, Tiger's Milk hits with intense cerebral euphoria, an experience described by its breeders as being borderline psychedelic. Tapering down to restful relaxation over time, this indica is commonly looked to for its pain-relieving and sleepy qualities. Its aroma is a complex mix of earthy notes, led by hints of sweet honey and hashy spice. ",
+		"image": "https://images.leafly.com/flower-images/defaults/generic/strain-26.png?auto=compress",
+		"parents": ["Appalachia", "Bubba Kush"],
+		"children": ["Crouching Tiger Hidden Alien"],
+		"type": "Indica",
+		"aliases": ["Tiger Milk"],
+		"terpenes": []
+	}
+}

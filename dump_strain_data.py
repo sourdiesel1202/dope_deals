@@ -1,6 +1,7 @@
 #!/app/virtualenv/bin/python3
 import csv
 import os
+import string
 import traceback
 import cx_Oracle, json, pprint, sys, time
 from datetime import datetime
@@ -10,6 +11,7 @@ from bs4 import BeautifulSoup
 logging = False
 creds = None
 module_config = load_module_config(__file__.split("/")[-1].split(".py")[0])
+
 from classes import Leafly,Connection, AllBud
 from functions import process_list_concurrently
 def load_strain_data(pages):
@@ -51,13 +53,14 @@ if __name__ == "__main__":
     #so in theory... this should just work?
     # workdriver = Leafly(Connection(module_config['url']))
     # driver.build_webdriver()
-    pages = ["F"]
+    # pages = ["F"]
     driver = AllBud(Connection(module_config['url']))
-    # pages = driver.load_pages()
-
-    process_list_concurrently(pages,load_strain_data,5)
-    combine_outputs()
-    # driver.build_webdriver()
+    for page in list(string.ascii_uppercase):
+        # pages = driver.load_pages()
+        pages=[page]
+        process_list_concurrently(pages,load_strain_data,5)
+        combine_outputs()
+        # driver.build_webdriver()
     # driver.load_strains()
     print()
     # with open(module_config['html_source']) as f:
